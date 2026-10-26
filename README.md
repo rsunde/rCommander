@@ -9,11 +9,13 @@ Install it on your desktop, your laptop and your home server,
 and each one opens the others' drives as if they were plugged in right here,
 from any browser in the house, even on your phone.
 
-[**Download**](../../releases/latest) · [Install guide](docs/install-and-test-guide.md) · [Report a bug](../../issues/new/choose)
+[**Download**](../../releases/latest) · [Install guide](docs/install-and-test-guide.md) · [Report a bug](../../issues/new/choose) · [**Free wallpapers**](#bonus-the-long-walk)
 
 &nbsp;
 
 ![Photos on studio-pc next to the backups on home-server, a 5.7 GB copy between them running at 340 MB/s](docs/images/two-machines-copy.png)
+
+*Like those mountains? They are yours: [24 of them in 4K, free, with the story of the hike](#bonus-the-long-walk).*
 
 </div>
 
@@ -155,7 +157,8 @@ Details: [install and test guide](docs/install-and-test-guide.md), Parts 4 and 5
 
 The landscapes in the screenshots above, as a pack of 24 wallpapers in 4K, with the story of the
 seven-week hike it took to find them.
-[**Download the wallpapers**](../../releases/tag/wallpapers-1)
+[**Download the wallpapers (zip, 21 MB)**](https://github.com/rsunde/rCommander/releases/download/wallpapers-1/rCommander-Wallpapers.zip)
+· [release page](../../releases/tag/wallpapers-1)
 
 ![All 24 wallpapers](docs/images/wallpapers.jpg)
 
