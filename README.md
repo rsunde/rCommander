@@ -1,10 +1,90 @@
+<div align="center">
+
 # rCommander
 
-A keyboard- and mouse-friendly file manager that runs in your browser.
+### Every file on every computer you own. One window. Instantly.
 
-Install it on each of your computers, and every one of them shows the drives of the others:
-browse, search, view and copy files across all your machines from one window,
-also from your phone.
+**The file manager for people with more than one computer.**
+Install it on your desktop, your laptop and your home server,
+and each one opens the others' drives as if they were plugged in right here,
+from any browser in the house, even on your phone.
+
+[**Download**](../../releases/latest) · [Install guide](docs/install-and-test-guide.md) · [Report a bug](../../issues/new/choose)
+
+</div>
+
+&nbsp;
+
+---
+
+&nbsp;
+
+### All your machines, one file manager
+
+Windows and Linux side by side, in the same panes.
+Copy a folder from the laptop to the server with a keypress: the computers talk to each other directly,
+your browser is not in the middle, and a copy that loses the network **picks up where it stopped**,
+even after a restart.
+
+### Search that does not make you wait
+
+rCommander keeps an index of your drives and keeps it current as files change.
+Type a name and the results are there while you are still typing, across the whole machine.
+
+### Your keys, your way
+
+Grew up on **Total Commander**? **Midnight Commander**? **Far**? Live in **yazi**, **ranger**, **nnn**, **lf**,
+**vifm**? Prefer **Explorer**, **Directory Opus** or **VS Code**?
+Pick a personality and rCommander takes on its keys, panes and look.
+And everything also works with the mouse alone.
+
+### Undo. Really.
+
+Deleted the wrong folder? Moved a thousand photos into the wrong place? Renamed a whole album badly?
+**Ctrl+Z.** Copies, moves, renames, deletes to the recycle bin, unpacked archives, whole scripts:
+one step back, even when the files were on another computer.
+
+### Opens everything
+
+Videos that browsers refuse (MKV, HEVC, 10-bit, surround sound) play anyway,
+converted on the fly, on the graphics card when there is one.
+E-books that remember your page. Markdown and HTML rendered, code highlighted the way GitHub does it,
+PDFs, photos with their camera details, music with its tags.
+Zip, 7z, tar and rar open like folders, and you can copy files **into** a zip as if it were one.
+
+### Work that does not get in your way
+
+Big copies queue per disk, so two copies never fight over the same drive.
+Pause one, reorder them, add more files to a copy that is already running.
+Close the browser, restart the computer: the work carries on and finishes.
+
+### See where your space went
+
+Treemaps, sunbursts and bar charts of any folder, in seconds.
+Find duplicates and clear them out safely. Take snapshots and see which folder grew since last month,
+or compare a folder with its copy on another machine.
+
+### And all the things a power user reaches for
+
+Synchronise two folders, even on two computers. Multi-rename with counters, dates and photo details.
+Create and verify checksum files. Convert videos, audio and images. Watch a folder and run a script
+when files arrive. Play music to the speakers in any room. Install VS Code themes with one click.
+Write your own commands in JavaScript.
+
+### Yours. Only yours.
+
+rCommander runs on your own computers. No cloud, no account, no subscription, nothing about your files
+leaves your home. Friends and family can get a guest password that shows only the folders you share,
+read-only.
+
+&nbsp;
+
+> **rCommander is young.** Version 0.1 is out for its first testers: expect rough edges, and please
+> [tell us](../../issues/new/choose) what you find.
+
+&nbsp;
+
+---
 
 This repository holds the **downloads, help and bug reports**. The source code is not public.
 
