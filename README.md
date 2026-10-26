@@ -11,6 +11,10 @@ from any browser in the house, even on your phone.
 
 [**Download**](../../releases/latest) · [Install guide](docs/install-and-test-guide.md) · [Report a bug](../../issues/new/choose)
 
+&nbsp;
+
+![Photos on studio-pc next to the backups on home-server, a 5.7 GB copy between them running at 340 MB/s](docs/images/two-machines-copy.png)
+
 </div>
 
 &nbsp;
@@ -31,12 +35,16 @@ even after a restart.
 rCommander keeps an index of your drives and keeps it current as files change.
 Type a name and the results are there while you are still typing, across the whole machine.
 
+![19 hits across the whole machine in 28 ms, with the photo preview beside them](docs/images/instant-search.png)
+
 ### Your keys, your way
 
 Grew up on **Total Commander**? **Midnight Commander**? **Far**? Live in **yazi**, **ranger**, **nnn**, **lf**,
 **vifm**? Prefer **Explorer**, **Directory Opus** or **VS Code**?
 Pick a personality and rCommander takes on its keys, panes and look.
 And everything also works with the mouse alone.
+
+![The Midnight Commander personality: blue panels, function-key bar, command line](docs/images/midnight-commander.png)
 
 ### Undo. Really.
 
@@ -52,6 +60,10 @@ E-books that remember your page. Markdown and HTML rendered, code highlighted th
 PDFs, photos with their camera details, music with its tags.
 Zip, 7z, tar and rar open like folders, and you can copy files **into** a zip as if it were one.
 
+![An HEVC video playing in the browser, transcoded on the fly on the graphics card](docs/images/video-transcoding.png)
+
+![A project README rendered with its table and highlighted code](docs/images/markdown-viewer.png)
+
 ### Work that does not get in your way
 
 Big copies queue per disk, so two copies never fight over the same drive.
@@ -63,6 +75,8 @@ Close the browser, restart the computer: the work carries on and finishes.
 Treemaps, sunbursts and bar charts of any folder, in seconds.
 Find duplicates and clear them out safely. Take snapshots and see which folder grew since last month,
 or compare a folder with its copy on another machine.
+
+![58 GB as a sunburst, with the space by file type beside it](docs/images/disk-usage.png)
 
 ### And all the things a power user reaches for
 
