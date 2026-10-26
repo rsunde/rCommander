@@ -151,6 +151,16 @@ Details: [install and test guide](docs/install-and-test-guide.md), Parts 4 and 5
 
 &nbsp;
 
+## Bonus: The Long Walk
+
+The landscapes in the screenshots above, as a pack of 24 wallpapers in 4K, with the story of the
+seven-week hike it took to find them.
+[**Download the wallpapers**](../../releases/tag/wallpapers-1)
+
+![All 24 wallpapers](docs/images/wallpapers.jpg)
+
+&nbsp;
+
 ## Found a bug? Have an idea?
 
 Open an [**issue**](../../issues/new/choose) and pick *Bug report* or *Idea*.
