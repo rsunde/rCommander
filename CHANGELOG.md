@@ -8,6 +8,17 @@ Newest first. Each release on the [Releases page](https://github.com/rsunde/rCom
 
 ## Unreleased
 
+## 0.1.2
+
+- An agent started from the tray now listens on the network in LAN mode; before, the tray pinned it to this machine, so copies from other machines could not connect. Settings ▸ Connections now says so when that happens.
+- A narrow folder tree now keeps names readable and the expand arrows clickable: it hides folder sizes first, then tightens the indent of deep folders instead of pushing the names out.
+- While the index reads a drive, the status shows how far it is and about how long is left.
+- The machine and drive list in a narrow pane opens again; before, clicking its button seemed to do nothing.
+- The pane header shows one drive button for the current drive instead of a row of drives that was cut off with many drives.
+- The machine and drive list can be filtered by typing, groups drives by kind (fixed, removable, network, optical, shares) and marks the current one.
+- On Linux, system mounts (bind mounts, /boot, container and desktop helper mounts) are folded behind "Show N system mounts"; View ▸ Show system mounts in drive lists shows them, also in the folder tree.
+- Linux drives show their volume label, and every drive its file system (ntfs, ext4, btrfs …) in the drive list.
+
 ## 0.1.1
 
 - MKV, AVI, WMV, FLV, MPG, M2TS and other video files open in the video player instead of as text.
