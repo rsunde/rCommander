@@ -8,6 +8,10 @@ Newest first. Each release on the [Releases page](https://github.com/rsunde/rCom
 
 ## Unreleased
 
+## 0.1.3
+
+- Setup's `update`, `status` and `uninstall` now find your existing install and reuse its folder, data folder and port, so you no longer repeat `-InstallDir` or `-DataDir`; they first print where each value came from.
+
 ## 0.1.2
 
 - An agent started from the tray now listens on the network in LAN mode; before, the tray pinned it to this machine, so copies from other machines could not connect. Settings ▸ Connections now says so when that happens.
