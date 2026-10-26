@@ -1,0 +1,47 @@
+name: Bug report
+description: Something does not work as it should.
+labels: [bug]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: rCommander version
+      description: Help ▸ About shows it.
+      placeholder: 0.1.0
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Computer
+      options:
+        - Windows 11
+        - Windows 10
+        - Linux
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: step
+    attributes:
+      label: Step in the install and test guide (if any)
+      placeholder: 3.3
+  - type: textarea
+    id: what
+    attributes:
+      label: What did you do?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: happened
+    attributes:
+      label: What happened instead?
+      description: Screenshots help. Do not attach settings.json, it contains passwords and keys.
+    validations:
+      required: true

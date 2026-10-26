@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Install and test guide
+    url: https://github.com/rsunde/rCommander/blob/main/docs/install-and-test-guide.md
+    about: Step-by-step install, setup, update and uninstall.
