@@ -392,7 +392,7 @@ powershell -ExecutionPolicy Bypass -File .\setup.ps1 update
 
 ### Step 4.2 — Go back to the old version
 
-Run the old version's setup:
+Run the old version's setup (it is in your install folder; the default one is shown):
 
 ```powershell
 & "$env:LOCALAPPDATA\Programs\rCommander\<old version>\setup.ps1" update
@@ -524,8 +524,9 @@ Do not send the file `settings.json`: it contains passwords and keys.
 
 ## Good to know
 
-**Installing somewhere else.** To put the program in another folder, add `-InstallDir <folder>` to the install,
-and add the same `-InstallDir <folder>` to every later `update` and `uninstall`.
+**Installing somewhere else.** To put the program in another folder, add `-InstallDir <folder>` to the install.
+Later `update`, `status` and `uninstall` find that install by themselves and reuse its data folder and port; the
+first lines they print say where each value came from. Check them before you go on.
 
 **Keeping the data on another disk.** Before installing, run this once, close PowerShell and open it again:
 
