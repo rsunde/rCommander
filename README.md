@@ -9,7 +9,7 @@ Install it on your desktop, your laptop and your home server,
 and each one opens the others' drives as if they were plugged in right here,
 from any browser in the house, even on your phone.
 
-[**Download**](../../releases/latest) · [Install guide](docs/install-and-test-guide.md) · [Report a bug](../../issues/new/choose) · [**Free wallpapers**](#bonus-the-long-walk)
+[**Download**](../../releases/latest) · [What's new](CHANGELOG.md) · [Install guide](docs/install-and-test-guide.md) · [Report a bug](../../issues/new/choose) · [**Free wallpapers**](#bonus-the-long-walk)
 
 &nbsp;
 
