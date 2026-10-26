@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="390" viewBox="0 0 880 390" role="img" aria-labelledby="t d">
+<title id="t">rCommander on one computer</title>
+<desc id="d">The browser and the tray icon talk to the rCommander agent on localhost. The agent browses, indexes, copies and runs jobs, serves the web UI, and reads and writes the computer's disks.</desc>
+<style>
+:root{--bg:#f6f8fb;--edge:#dde3ec;--card:#ffffff;--line:#c9d1dd;--ink:#1f2633;--mute:#5d6878;--acc:#2f6bd8;--accsoft:#eaf1fd;--grn:#1d8a5f;--grnsoft:#e5f4ed;--amb:#b7771a;--ambsoft:#fbf2e2}
+@media (prefers-color-scheme:dark){:root{--bg:#141922;--edge:#2a3240;--card:#1c2330;--line:#3a4558;--ink:#e6ebf2;--mute:#9aa6b8;--acc:#78a6ff;--accsoft:#1b2a45;--grn:#4cc38a;--grnsoft:#15302a;--amb:#e3aa52;--ambsoft:#372a15}}
+text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;fill:var(--ink)}
+.h{font-size:18px;font-weight:700}.sub{font-size:13px;fill:var(--mute)}
+.t{font-size:15px;font-weight:650}.s{font-size:12.5px;fill:var(--mute)}
+.c{font-size:12.5px;font-weight:500}.l{font-size:11.5px;fill:var(--mute)}
+.note{font-size:12px;fill:var(--mute);font-style:italic}
+.bg{fill:var(--bg);stroke:var(--edge)}.card{fill:var(--card);stroke:var(--line);stroke-width:1.2}
+.agent{fill:var(--accsoft);stroke:var(--acc);stroke-width:1.6}
+.chip{fill:var(--card);stroke:var(--line)}
+.ar{stroke:var(--acc);stroke-width:2;fill:none}.arg{stroke:var(--amb);stroke-width:2;fill:none}.ard{stroke:var(--grn);stroke-width:2;fill:none}
+.ha{fill:var(--acc)}.hg{fill:var(--amb)}.hd{fill:var(--grn)}
+.ia{fill:var(--accsoft);stroke:var(--acc);stroke-width:1.4}.ig{fill:var(--ambsoft);stroke:var(--amb);stroke-width:1.4}.id{fill:var(--grnsoft);stroke:var(--grn);stroke-width:1.4}
+.br{stroke:var(--mute);stroke-width:1.2;fill:none;stroke-dasharray:4 4}
+</style>
+<defs>
+<marker id="ma" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ha"/></marker>
+<marker id="mg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="hg"/></marker>
+<marker id="md" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="hd"/></marker>
+</defs>
+<rect class="bg" x="0.5" y="0.5" width="879" height="389" rx="18"/>
+<text class="h" x="32" y="40">One computer</text>
+<text class="sub" x="32" y="61">One small service, the agent, does the work. The browser is the screen.</text>
+
+<!-- Browser -->
+<rect class="card" x="32" y="96" width="180" height="104" rx="14"/>
+<rect class="ia" x="48" y="112" width="34" height="26" rx="4"/><path d="M48 119.5h34" class="ar" stroke-width="1.4"/>
+<text class="t" x="94" y="130">Browser</text>
+<text class="s" x="48" y="162">the web UI, served</text>
+<text class="s" x="48" y="180">by the agent</text>
+
+<!-- Tray -->
+<rect class="card" x="32" y="232" width="180" height="104" rx="14"/>
+<rect class="ig" x="48" y="248" width="34" height="26" rx="6"/><circle cx="65" cy="261" r="5" class="hg"/>
+<text class="t" x="94" y="266">Tray icon</text>
+<text class="s" x="48" y="298">Windows: starts it,</text>
+<text class="s" x="48" y="316">shows status and jobs</text>
+
+<!-- Agent -->
+<rect class="agent" x="292" y="88" width="300" height="256" rx="16"/>
+<text class="t" x="312" y="118">rCommander agent</text>
+<text class="s" x="312" y="138">headless service, Windows and Linux</text>
+<g>
+<rect class="chip" x="312" y="154" width="128" height="30" rx="8"/><text class="c" x="376" y="173.5" text-anchor="middle">Browse, preview</text>
+<rect class="chip" x="448" y="154" width="128" height="30" rx="8"/><text class="c" x="512" y="173.5" text-anchor="middle">Index, search</text>
+<rect class="chip" x="312" y="192" width="128" height="30" rx="8"/><text class="c" x="376" y="211.5" text-anchor="middle">Copy, move</text>
+<rect class="chip" x="448" y="192" width="128" height="30" rx="8"/><text class="c" x="512" y="211.5" text-anchor="middle">Jobs, disk queues</text>
+<rect class="chip" x="312" y="230" width="128" height="30" rx="8"/><text class="c" x="376" y="249.5" text-anchor="middle">Undo history</text>
+<rect class="chip" x="448" y="230" width="128" height="30" rx="8"/><text class="c" x="512" y="249.5" text-anchor="middle">Video, archives</text>
+<rect class="chip" x="312" y="268" width="264" height="30" rx="8"/><text class="c" x="444" y="287.5" text-anchor="middle">Serves the web UI on port 8223</text>
+</g>
+<text class="l" x="442" y="326" text-anchor="middle">listens on this computer only, until LAN mode is on</text>
+
+<!-- Disks -->
+<rect class="card" x="672" y="96" width="176" height="240" rx="14"/>
+<text class="t" x="690" y="126">Your disks</text>
+<g>
+<rect class="id" x="690" y="146" width="34" height="22" rx="5"/><circle cx="716" cy="157" r="2.6" class="hd"/><text class="c" x="734" y="161.5">Local drives</text>
+<rect class="id" x="690" y="186" width="34" height="22" rx="5"/><circle cx="716" cy="197" r="2.6" class="hd"/><text class="c" x="734" y="201.5">USB drives</text>
+<rect class="id" x="690" y="226" width="34" height="22" rx="5"/><circle cx="716" cy="237" r="2.6" class="hd"/><text class="c" x="734" y="241.5">Network shares</text>
+</g>
+<text class="s" x="690" y="286">The index keeps every</text>
+<text class="s" x="690" y="304">fixed drive searchable</text>
+<text class="s" x="690" y="322">and current.</text>
+
+<!-- arrows -->
+<path class="ar" d="M214 160H289" marker-end="url(#ma)" marker-start="url(#ma)"/>
+<text class="l" x="252" y="150" text-anchor="middle">localhost</text>
+<path class="arg" d="M214 290H289" marker-end="url(#mg)"/>
+<text class="l" x="252" y="280" text-anchor="middle">looks after</text>
+<path class="ard" d="M595 216H669" marker-end="url(#md)" marker-start="url(#md)"/>
+<text class="l" x="632" y="190" text-anchor="middle">read, write,</text>
+<text class="l" x="632" y="205" text-anchor="middle">watch</text>
+
+<!-- traygent -->
+<path class="br" d="M32 352v10H592v-10"/>
+<text class="note" x="312" y="378" text-anchor="middle">On a desktop, the tray and the agent it looks after are nicknamed the “traygent”.</text>
+</svg>

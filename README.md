@@ -95,6 +95,37 @@ read-only.
 
 &nbsp;
 
+## How it fits together
+
+**The agent** is a small headless service, one per computer, on Windows and Linux. It does all the work:
+browses, indexes, searches, copies, runs the jobs and keeps the undo history. It also serves the web UI.
+Until you turn on LAN mode it listens only on the computer itself.
+
+**The web UI** is what you see: a browser app the agent serves at `http://localhost:8223`.
+Close the tab and the work carries on in the agent.
+
+**The tray** (Windows) is the icon by the clock. It starts and watches the agent, shows its status and
+jobs that need you, and opens the UI. Tray plus the agent it looks after: we call that pair the *traygent*.
+
+![One computer: the browser and the tray talk to the agent on localhost, the agent reads and writes the disks](docs/images/how-one-machine.svg)
+
+**A swarm** is simply more computers, each with its own agent. Turn on LAN mode and give every computer the
+same shared key. The agents find each other with a small beacon on the home network, or you type their
+addresses. Your browser still talks only to its own agent, which passes requests on to the others, so any
+pane can show any computer. There is no central server and no cloud: switch one computer off and the rest
+carry on. A guest signs in with the guest password and sees only the folders you share, read-only.
+
+![Several computers: the browser talks to the desktop's agent, which relays to the laptop and the home server with the shared key; the agents find each other by a beacon on the home network; a guest reaches shared folders read-only](docs/images/how-swarm.svg)
+
+**A copy between computers** runs on the receiving agent. It asks the sending agent which files there are,
+then pulls them straight from it: the data never passes through your browser. Every file is checked on
+both ends, gets its real name only when complete, and a copy cut off by the network or a restart picks up
+where it stopped.
+
+![A copy: the receiving agent asks the sending agent for the file list, then pulls the data agent to agent](docs/images/how-copy.svg)
+
+&nbsp;
+
 > **rCommander is young.** Version 0.1 is out for its first testers: expect rough edges, and please
 > [tell us](../../issues/new/choose) what you find.
 
