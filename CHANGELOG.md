@@ -8,6 +8,19 @@ Newest first. Each release on the [Releases page](https://github.com/rsunde/rCom
 
 ## Unreleased
 
+## 0.1.4
+
+- The VS Code look's left side bar is wider by default and you can drag its right edge to resize it (arrow keys when the edge is focused, double-click to reset); the width is remembered.
+- Built-in toolbar templates such as the Total Commander button bar now follow the look (personality) you switch to: they hide unless the look asks for them. Your own toolbars keep whatever state you gave them.
+- The folder tree now shows a drive's free space (hover a drive) and keeps it current: read again after copy, move or delete, on Refresh, and with the 30-second drive check.
+- A drive the index cannot follow live (on Linux usually because the inotify watch limit is too low for a big disk) now gets a clear notice in the index status popover and in Settings ▸ Connections: why, what it costs, and the exact command that fixes it, with a Copy button.
+- Such a drive is no longer walked almost nonstop: the next re-check waits at least 15 minutes, or four times as long as the last walk took (at most once a day by default). Restarting rCommander no longer starts such a walk at once when the drive was walked recently.
+- Free space on a drive now follows the disk: it is read again after every copy, move or delete, on Refresh, and every 30 seconds or so. Before, it stayed as it was when the page loaded.
+- Updates: when a newer release is out, a chip in the top bar shows it; click it to read what is new and update with one click (Help > Check for updates...). Help > What's new shows the notes of the version you run, and after an update you see its notes once.
+- Help > About > System lists every machine's version and channel, marks machines that run an older or newer version than this one, and offers Update all: the other machines one at a time, each until it is back on the new version, then this one. The task panel follows each update through its restart, and the page reloads itself once this machine runs the new version.
+- Tray: shows "Update to x.y.z..." in its menu and pops up one notification per new release; a tray started by an update waits up to 5 seconds for the old one to exit instead of quitting.
+- Linux setup: `setup.sh install` and `update` no longer end with an error after a successful start when LAN mode is off.
+
 ## 0.1.3
 
 - Setup's `update`, `status` and `uninstall` now find your existing install and reuse its folder, data folder and port, so you no longer repeat `-InstallDir` or `-DataDir`; they first print where each value came from.

@@ -390,6 +390,67 @@ powershell -ExecutionPolicy Bypass -File .\setup.ps1 update
 
 &nbsp;
 
+### Step 4.1b — Update from inside rCommander
+
+You need an install that is at least one release behind the newest one. These steps start from the older version; install it first with Part 1 if needed. Do each case that fits your machine.
+
+**Windows, logon tasks not elevated (the default install).**
+
+- [ ] The top bar shows an **Update** chip within a day, or right away after **Help ▸ Check for updates…**.
+- [ ] The dialog lists every release newer than yours, newest first, with what changed.
+- [ ] Click **Update**. The task panel shows the download, the check and then "restarting". No window stays open.
+- [ ] After less than a minute the page reloads on its own and **Help ▸ About** shows the new version.
+- [ ] Your bookmarks, settings and password are still there, and the tray icon is back (once, not twice).
+
+**Windows, installed with `--elevated`.** Repeat the cases above.
+
+- [ ] The update works without a UAC prompt, and the agent and tray come back elevated.
+- [ ] Sign in to Windows as a user who is not an administrator, if you have one, and open rCommander. If it refuses and shows a command to run in an administrator PowerShell, run that command and check the version.
+
+**Windows, installed with `-NoAutostart`.**
+
+- [ ] The update works, and afterwards the agent is running but no logon task exists (check with `setup.ps1 status`).
+
+**Linux, user install (`bash setup.sh`).**
+
+- [ ] The update works the same way, and `setup.sh status` shows the new version.
+- [ ] After the update the agent still runs when you close the terminal you started it from.
+
+**Linux, `--system` install.**
+
+- [ ] The dialog shows no Update button, only a `sudo` command. Copying it and running it in a terminal updates the install.
+
+**Folders with spaces in their names.** The update hands over to a one-shot task on Windows (`conhost.exe --headless powershell.exe`) and to `systemd-run --user` on Linux; whether they pass paths with spaces through intact has not been tried yet. Use a fresh test install for this case and uninstall it after (`uninstall` with the same folder options).
+
+- [ ] Windows: install the older version with both folders containing a space:
+  `powershell -ExecutionPolicy Bypass -File .\setup.ps1 -InstallDir 'C:\rc test\program files' -DataDir 'C:\rc test\data folder'`.
+  Update from inside rCommander. The page reloads on the new version, `setup.ps1 status` shows it,
+  `C:\rc test\data folder\updates\<new version>.log.exit` holds `0`, and the scheduled task `rCommander Update` is gone.
+- [ ] Linux: `RC_DATA_ROOT="$HOME/rc test/data root" bash setup.sh install --install-dir "$HOME/rc test/program files"` (there is no data folder option; keep `RC_DATA_ROOT` exported in that shell for later `status`/`uninstall` runs).
+  Update from inside rCommander. The page reloads on the new version, `setup.sh status` shows it, and
+  `$HOME/rc test/data root/rCommander/updates/<new version>.log.exit` holds `0`.
+
+**Skip this version.**
+
+- [ ] Click **Skip this version** in the dialog: the chip goes away. A newer release than the skipped one shows the chip again.
+
+**What's new after the update.**
+
+- [ ] The first time you open rCommander after an update, a notice shows what changed since the version you had before. It does not show again.
+- [ ] **Help ▸ What's new** shows the notes of the running version at any time.
+
+**Refusals.**
+
+- [ ] Start two updates quickly (two browser tabs): the second says one is already running.
+- [ ] Turn the network off before clicking Update: the task fails with a clear message and the old version keeps running.
+
+**Update all, with a second machine.** Both machines must be on the older version and see each other (Part 2.3).
+
+- [ ] **Help ▸ About ▸ System** lists both machines with their versions, and marks an older one.
+- [ ] Click **Update all**: the other machine updates first, then this one. The task panel follows each, and the page reloads when this machine is on the new version.
+
+&nbsp;
+
 ### Step 4.2 — Go back to the old version
 
 Run the old version's setup (it is in your install folder; the default one is shown):
@@ -401,6 +462,10 @@ Run the old version's setup (it is in your install folder; the default one is sh
 - [ ] **Help ▸ About** shows the old version again, and your things are still there.
 
 Then repeat Step 4.1 to get the new version back.
+
+You can also go back from inside rCommander:
+
+- [ ] **Help ▸ Check for updates…** offers **Go back to <old version>**. After you click it, the old version is running again and your things are still there. If the old version is 0.1.3 or older, rCommander refuses and shows the command to run by hand (as above).
 
 &nbsp;
 
