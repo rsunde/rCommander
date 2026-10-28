@@ -109,13 +109,13 @@ jobs that need you, and opens the UI. Tray plus the agent it looks after: we cal
 
 ![One computer: the browser and the tray talk to the agent on localhost, the agent reads and writes the disks](docs/images/how-one-machine.svg)
 
-**A swarm** is simply more computers, each with its own agent. Turn on LAN mode and give every computer the
+**A fleet** is simply more computers, each with its own agent. Turn on LAN mode and give every computer the
 same shared key. The agents find each other with a small beacon on the home network, or you type their
 addresses. Your browser still talks only to its own agent, which passes requests on to the others, so any
 pane can show any computer. There is no central server and no cloud: switch one computer off and the rest
 carry on. A guest signs in with the guest password and sees only the folders you share, read-only.
 
-![Several computers: the browser talks to the desktop's agent, which relays to the laptop and the home server with the shared key; the agents find each other by a beacon on the home network; a guest reaches shared folders read-only](docs/images/how-swarm.svg)
+![Several computers: the browser talks to the desktop's agent, which relays to the laptop and the home server with the shared key; the agents find each other by a beacon on the home network; a guest reaches shared folders read-only](docs/images/how-fleet.svg)
 
 **A copy between computers** runs on the receiving agent. It asks the sending agent which files there are,
 then pulls them straight from it: the data never passes through your browser. Every file is checked on
