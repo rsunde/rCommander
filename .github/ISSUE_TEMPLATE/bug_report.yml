@@ -42,6 +42,11 @@ body:
     id: happened
     attributes:
       label: What happened instead?
-      description: Screenshots help. Do not attach settings.json, it contains passwords and keys.
+      description: Screenshots help. Help ▸ Report a problem… fills this in for you. Do not attach settings.json, it contains passwords and keys.
     validations:
       required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics bundle
+      description: "In rCommander: Help ▸ Report a problem… builds a zip you can read first, with paths, machine names and addresses masked. Save it and drag it into this box."
