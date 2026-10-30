@@ -451,6 +451,13 @@ You need an install that is at least one release behind the newest one. These st
 
 &nbsp;
 
+### Step 4.1c — A failed task is still readable after the update
+
+Do this on the update from Step 4.1b, or on any restart of the agent.
+
+- [ ] Before updating, make a task fail (copy a file into a folder you have no permission to write to, or to a full disk). Note its name.
+- [ ] After the update or restart, open the task panel. The failed task is still listed with its error, and its console shows what it printed.
+- [ ] **Export log** on it contains the console, the error and a timeline.
 ### Step 4.2 — Go back to the old version
 
 Run the old version's setup (it is in your install folder; the default one is shown):
@@ -572,6 +579,107 @@ bash ~/.local/opt/rCommander/current/setup.sh uninstall --purge
 
 ---
 
+## Part 7 — Machine colours and the flagship
+
+Needs two machines with rCommander 0.1.5 on the same network, LAN mode on with the same shared key (call them machine A and machine B), and ideally a third machine still on 0.1.4 (machine C).
+
+1. Open rCommander on machine A and look at Help > About > Machines (one card per machine). - [ ] Both machines are listed, each with a coloured mark beside its name.
+2. Open rCommander on machine B. - [ ] Both machines show the same two colours as on machine A, within about 10 seconds. - [ ] The two colours differ.
+3. Open a pane on each machine in turn. - [ ] A thin stripe in the machine's colour runs along the top of the pane. - [ ] Hovering a mark shows the machine's name and its colour name.
+4. Settings > Appearance > Machine colours: choose "Marks only", then "Off", then back to the default. - [ ] The stripe goes first, then the marks; the names stay.
+5. On machine A, right-click machine B in the machine picker, choose Change colours... and pick a free colour. - [ ] Within about 10 seconds machine B has the new colour on both machines.
+6. Change colours again and pick the colour machine A has. - [ ] The dialog offers Swap or Pick another. Choose Swap. - [ ] The two machines have traded colours on both screens.
+7. Make machine A the flagship (Help > About > Machines > Make this the flagship; on a machine that is not the flagship the button may read "Take the flag from ..." once another machine holds it). - [ ] A flag appears before machine A's name on both machines.
+8. On machine B choose Take the flag from machine A and confirm. - [ ] The flag moves to machine B on both machines.
+9. Split: disconnect machine B from the network (unplug or turn off Wi-Fi). On machine A make A the flagship; on machine B make B the flagship. Reconnect machine B. - [ ] Within about a minute both machines agree on one flagship, the one set last. - [ ] The machine that lost the flag shows one notice saying the other took the flag while you were apart.
+10. If machine C (0.1.4) is available, start it on the same network. - [ ] Machines A and B list machine C and give it a colour within about a minute. - [ ] Machine C keeps working normally (browse, copy). - [ ] After updating machine C to 0.1.5 it shows the same colour.
+11. Shut machine B down. On machine A open Help > About > Machines. - [ ] Machine B is shown as offline with Forget machine.
+12. Choose Forget machine for machine B. - [ ] Its card is gone and its colour is free.
+13. Start machine B again. - [ ] It comes back with a colour of its own within about 20 seconds.
+14. While machine B is running, forget it from machine A (right-click its mark > Forget machine). - [ ] Machine B takes a colour again within about 20 seconds and is never left without one.
+
+&nbsp;
+
+---
+
+## Part 8 — The dock: moving and resizing panels
+
+Needs rCommander 0.1.5 open in a desktop browser, signed in as the owner. A second browser (or a private window) signed in as the owner is used in step 9, and a guest sign-in in step 10.
+
+1. Open View > Panels and show the Inspector, Tasks and Playback panels. - [ ] Each one appears and its entry is checked.
+2. Drag the Inspector by its header to the left edge of the window. - [ ] A highlight shows a left-edge target while you drag. - [ ] After you drop, the Inspector sits on the left. Repeat for the right, top and bottom edges; it follows each time.
+3. Drag the Tasks panel onto the Inspector's header. - [ ] The highlight shows a tab insert marker. - [ ] Both panels share the zone as tabs; dragging a tab out again splits them apart.
+4. Drag the Playback panel onto the lower half of the zone. - [ ] It stacks beneath the others. - [ ] The boundary between stacks moves when dragged, with the arrow keys, and resets on double-click.
+5. Drag a panel to the middle of the window away from every edge. - [ ] It becomes a floating window. - [ ] Move it by its header and resize it by its edges and corners; it cannot be dragged fully off-screen.
+6. Drag a panel by its header onto a pane's tab bar. - [ ] It becomes a tab beside the file tabs. - [ ] Drag that tab back to a side; it returns to the dock. - [ ] Right-click the panel's tab: the menu offers move, float, collapse and hide.
+7. Resize a side by dragging its inner edge, then double-click the edge. - [ ] The size changes while you drag. - [ ] Double-click returns it to the default size. - [ ] A side cannot be made wider than about 70 % of the window.
+8. Collapse a side and a single stack (the collapse button on the header). - [ ] Each becomes a labelled strip, tall at the left and right, wide at the top and bottom. - [ ] Clicking a strip opens it again. - [ ] With a job running, the collapsed task strip shows its progress.
+9. Start dragging a panel, then switch to another window with Alt+Tab and back. - [ ] The drag has ended, the panel stayed where it was and nothing is stuck. Press Esc during another drag. - [ ] The drag is cancelled and nothing moves.
+10. Reload the page. - [ ] Every panel is where you left it, with the same sizes. Open the same session in the second browser. - [ ] It shows the same layout, and a move in one browser shows up in the other within a couple of seconds.
+11. Use View > Panels > Move panel to… with the keyboard only. - [ ] The dialog lists the places and moves the focused panel. - [ ] F6 moves the focus from one open panel to the next.
+12. Open Personalities, arrange the panels, save a personality, change the layout, then apply the saved personality. - [ ] The saved arrangement comes back (floating windows excepted).
+13. Sign in as a guest in another window. - [ ] The owner-only panels (Tasks, Undo history, Script console, Playback, Scripts and Tools) are not offered, in View > Panels or the activity bar. - [ ] The guest can still move and resize the panels it has, and its layout stays in that browser only.
+
+&nbsp;
+
+---
+
+## Part 9 — Open files in their apps
+
+Needs rCommander 0.1.5 signed in as the owner in a browser on the same computer as the agent. Steps 1-4 use a Windows computer with an install made with the elevated option; steps 5-7 also need a second machine running rCommander (machine B) and a phone or another computer; steps 8-9 need a Linux computer. Report problems as described under Reporting.
+
+1. Select a `.txt` file and press Shift+Enter, then do the same with a `.docx` file. - [ ] Each opens in the app Windows has registered for it, on your screen. - [ ] In Task Manager > Details, add the "Elevated" column: the app shows **No**.
+2. Select a file and choose File > Open with... - [ ] A chooser for the app appears (write down what Windows 11 shows). - [ ] Picking an app opens the file in it, and its Elevated column says **No**.
+3. Select a `.ps1` file and press Shift+Enter. - [ ] A dialog says the file is a script and that opening it runs it. - [ ] Cancel opens nothing. - [ ] Run opens it.
+4. Select an image and press Enter. - [ ] It opens in the built-in viewer. Select a file the viewer cannot show (for example a `.docx`) and press Enter. - [ ] It opens in its app, not as a download. Set Settings > Files and lists > Enter on a file to "Always the system app" and press Enter on the image. - [ ] It opens in its app. Set the choice back.
+5. On a phone or another computer, open rCommander from this machine's address and sign in as the owner; select a file and choose Open with default app from the context menu. - [ ] The message says the app would open on the machine's screen, not on this device, and offers Download. - [ ] Download saves the file. - [ ] Nothing opens on the machine's own screen. Press Enter on a file the viewer cannot show. - [ ] It downloads.
+6. On the machine from step 1, browse to a file on machine B and open it with Shift+Enter. - [ ] It opens in the app, and a toast says it opened a copy and that changes stay in the copy. Edit the file in the app and save. - [ ] The toast's Copy back starts a copy to machine B, and the normal overwrite question appears.
+7. Open Tools > Opened copies... - [ ] The copy is listed with its source machine, when it was opened and "changed". - [ ] Open again, Show folder and Copy back work. - [ ] Remove fails with a message while the app still has the file open, and works after you close it.
+8. On a Linux desktop with the user-service install, open a `.txt` file with Shift+Enter. - [ ] It opens in the registered app. - [ ] Open with... is not offered. - [ ] A file with the executable bit asks first, like step 3.
+9. On a Linux machine without a desktop (a server, or a system-wide install), press Shift+Enter on a file. - [ ] The toast says "No desktop on this machine". Now reach that machine's rCommander through an SSH tunnel to its loopback port and press Shift+Enter again. - [ ] The browser counts as local (the tunnel arrives on loopback), so it gets the same "No desktop" answer; on a machine with a desktop the app would start on that machine's own screen, not on yours.
+10. Open the agent's log after the steps above. - [ ] There is one `Open` line for every attempt, refused ones included, naming the result, the path and where the request came from.
+
+&nbsp;
+
+---
+
+## Part 10 — Honest status
+
+Needs rCommander 0.1.5 on two machines in LAN mode (machine A on Windows, machine B on Linux, called the peer below), signed in as the owner in a browser on A, and the tray running on A. Step 9 needs a Windows install whose agent the setup script's logon task started. Report problems as described under Reporting.
+
+1. Open the machine picker on A. - [ ] Both machines are online (green). - [ ] The pane header and Help > About > Machines agree.
+2. On the peer, block the agent's TCP port: on Windows disable the firewall rule `rCommander agent (TCP 8223)`, on Linux run `sudo ufw deny 8223/tcp`. - [ ] Within 10 seconds the peer shows "unreachable: does not answer (timeout)" or "refuses connections on port ...", not online. - [ ] The tray icon turns amber and its Machines submenu names the peer and the reason. - [ ] A pane showing a folder on the peer shows the error. Remove the block. - [ ] The peer is online again within 10 seconds and the tray icon is back to normal.
+3. Start a copy to the peer, then unplug the peer's network cable or turn off its Wi-Fi. - [ ] Within 20 seconds the peer reads "offline - last seen ...". - [ ] The task panel shows "no contact with <peer> since ..." and the job's speed leaves the combined rate. Plug the network back in. - [ ] The job carries on and the message goes away.
+4. On the peer set a different `Agent:SharedKey` and restart it. - [ ] A's list shows "rejects this machine's key (the shared keys differ)". Put the original key back. - [ ] It is online again.
+5. With the web page open on A, choose Stop agent in the tray menu. - [ ] A banner says "agent not answering since ...", every other machine reads "unknown" in amber with a dimmed mark, the tray icon is red and its tooltip says "agent not answering since ...". - [ ] The tray menu shows the last known machines, jobs and drives marked "as of ...". Start the agent. - [ ] The banner says the agent is back, then goes away.
+6. On Linux run `sudo sysctl fs.inotify.max_user_watches=1024` and restart the agent. - [ ] The index dot is not green and its popup says "No live updates on ... - re-checked ...". - [ ] A pane on `/home` says "live" (own watcher) or "read hh:mm - not watched" with the reason, never plain "live" without changes arriving. - [ ] Search below `/` says "from index (re-checked ...)"; Search the disk finds a file you created a moment ago. Restore the limit and restart the agent. - [ ] The dot turns green again.
+7. Open Settings > Connections. - [ ] "Reachable" shows "checked ... ago". Leave the page open for 11 minutes and reopen it. - [ ] The check has run again.
+8. With Music Assistant connected, cut the network of the machine that runs it. - [ ] Within 40 seconds the speaker picker and Connections show it as unreachable, not connected. Reconnect it. - [ ] Players come back.
+9. Start the tray on Windows after the setup script's logon task started the agent. - [ ] "Restart agent" is enabled. - [ ] Choosing it restarts the agent and the web page reconnects. - [ ] Open the tray menu and leave it open while you stop and start the agent from another window. Does the open menu repaint with the new text, or only on the next open? This is not verified in code: write down what you see.
+10. Start a copy job, close the web page, and open the tray menu. - [ ] The Jobs submenu lists the job with its progress. - [ ] Clicking it opens the web page on that job in the task panel.
+
+## Part 11 — Logs, problem reports and storage
+
+Needs rCommander 0.1.5 signed in as the owner in a browser on the same computer. None of this has been tried on a real computer before, so be exact and write down what you see. Steps 7 to 9 need a spare folder on another disk or partition. Report problems as described under Reporting.
+
+1. Open **Settings ▸ Machine ▸ Logs**. - [ ] The log level, how long to keep files, the total size limit and the console size per task are there. - [ ] **Open logs folder** moves the focused pane to the `logs` folder inside your data folder, and it holds a file named `agent-` and today's date.
+2. Choose **Help ▸ Open logs folder**. - [ ] The focused pane goes to the same folder. Stop the agent (tray ▸ Stop agent) and choose **Open logs folder** in the tray menu. - [ ] The tray opens the folder in the system file manager, with the agent stopped. Start the agent again.
+3. Choose **Help ▸ Report a problem...**. Type "test" in the box. - [ ] The window shows "Nothing is sent by rCommander" before any button. - [ ] After Build, a list of files with sizes appears (`summary.txt`, `setup.txt`, `agent.log`, `config.txt`, at least). - [ ] Click each file: its text shows, and your folder names, computer names and addresses appear as things like `d1`, `machine-1`, `ip-1`. - [ ] Look for your user name, a computer name and a password or key anywhere in the files. Write down any you find, even a single word.
+4. Untick **Mask paths, names and addresses** and look again. - [ ] The real names show, but passwords and keys still read `***`. Tick it again.
+5. Click **Save bundle...**. - [ ] A zip named `rcommander-report-` with the date and time downloads. - [ ] Open it: the files are the ones you previewed. Click **Open GitHub issue**: - [ ] A new GitHub page opens with the form filled in, and "Diagnostics bundle" says to drag the zip into the box. Close it without sending.
+6. Make a task fail, right-click it. - [ ] **Report this...** is there, and the window offers "This job". Build it. - [ ] `job.log` holds the console and the error. Then stop the agent from Task Manager or with `kill -9` (not the tray), start it again and reload the page. - [ ] A message says rCommander stopped unexpectedly last time and offers **Report...**. - [ ] **Report...** builds a bundle that covers the minutes before the stop. - [ ] The message does not come back after you dismissed it and reloaded.
+7. Open **Settings ▸ Storage**. - [ ] The data folder, where that choice comes from and the free space are shown. - [ ] Every row says whether it can be rebuilt, is history or is yours, and the sizes add up to about the folder size in your file manager. - [ ] Click Clean on the thumbnail row: the text before the click says what goes and what stays, and afterwards "Freed ..." appears. - [ ] The Yours rows have no Clean button.
+8. **Move the data, Windows.** Click **Move...**, enter an empty folder on another drive. - [ ] It refuses a folder that is not empty or has too little free space. - [ ] The commands stop the agent, wait for it, copy with robocopy, check the result and run `setup.ps1 update -DataDir`. Run them in PowerShell. - [ ] The agent comes back, **Settings ▸ Storage** shows the new folder, and your bookmarks, settings and the failed task from step 6 are still there. - [ ] Make the copy fail (fill the target or unplug it) and run again: the commands stop before the setup step and the old folder is untouched. Move the data back the same way.
+9. **Move the data, Linux user install.** Same as step 8. - [ ] The commands stop the agent, wait until its port is free, copy with `cp -a` and run `setup.sh update` with `Agent__DataDirectory` set. - [ ] Afterwards the agent runs on the new folder and the old one is unchanged. On a `--system` install: - [ ] **Move...** shows no commands and explains that the folder is fixed and how to move it by hand.
+10. In **Settings ▸ Storage** set a budget a little below the total of the History and Rebuildable rows. - [ ] Within about 10 minutes the page lists "Recent cleans" saying what was cleared and how much, and the total comes down. - [ ] Today's log file and your recent tasks are still there. Set the budget back to 0.
+
+&nbsp;
+
+---
+&nbsp;
+
+---
+
 ## Reporting
 
 For every ❌, write down:
@@ -581,7 +689,9 @@ For every ❌, write down:
 - what you expected,
 - what happened (a screenshot helps).
 
-Do not send the file `settings.json`: it contains passwords and keys.
+Use **Help ▸ Report a problem...** to build a diagnostics bundle: read every file in it first, save the zip, and drag it into the GitHub issue yourself. It masks paths, names and addresses, but check the files anyway.
+
+Still never send the file `settings.json`: it contains passwords and keys.
 
 &nbsp;
 
