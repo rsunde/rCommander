@@ -676,6 +676,26 @@ Needs rCommander 0.1.5 signed in as the owner in a browser on the same computer.
 &nbsp;
 
 ---
+
+## Part 12 — New in 0.1.6
+
+Needs rCommander 0.1.6 signed in as the owner. Steps 1 to 4 and 8 need two machines in LAN mode with the same shared key (machine A, where your browser runs, and machine B); step 1 is best done while machine B still runs 0.1.5. Report problems as described under Reporting.
+
+1. **Update every machine.** Open **Help ▸ About ▸ Machines**. - [ ] Each machine shows its version and when it last checked for a new release. - [ ] **Check now** on a machine changes that time. - [ ] A machine that was never checked or cannot be reached reads as unknown, never as up to date. Click **Update all**. - [ ] Every machine checks first, then the other machines update before this one, and the page comes back on the new version.
+2. **Roll back one machine.** On machine B's card click **Roll back**. - [ ] It asks first. - [ ] Machine B comes back on its previous version and the card says so. Update it again from its own card. - [ ] A machine that cannot be updated with one click (for example a Linux system install) shows why and the command to run by hand, instead of a button.
+3. **Machine properties.** Right-click machine B in a pane header, in the machine picker and in the folder tree, and choose **Properties...**. - [ ] Each time **Help ▸ About ▸ Machines** opens on machine B's card. - [ ] With machine B stopped, the card says why it is not online.
+4. **Jobs on other machines in the tray.** Start a large copy on machine B (from the browser, with machine B as the target). Open the tray menu on machine A ▸ **Jobs**. - [ ] The job is listed under a line with machine B's name. - [ ] Clicking it opens rCommander with the task panel on that job. - [ ] With machine B stopped, the tray says machine B's jobs could not be read, instead of showing nothing.
+5. **Opened copies.** Open a file from machine B with **Shift+Enter**, close the app, and open the same file again. - [ ] The second open is quick: the copy on this computer is reused, not downloaded again. Edit and save the copy, then open the file again. - [ ] A fresh copy opens and your edited one is kept. Open **Tools ▸ Opened copies...**. - [ ] It shows how many copies there are and how much space they take. - [ ] **Remove all unchanged** removes only the copies you did not edit. - [ ] **Remove all, losing changes** asks once, names how many edited copies go, and then removes them. In **Settings ▸ Storage**: - [ ] the "Opened copies" row's Clean removes unchanged copies only.
+6. **Open with... on Windows.** Repeat Part 9 step 2. - [ ] The Windows "Open with" chooser appears. - [ ] The agent log line for it says "Requested", not "Opened".
+7. **Folder sizes and the index dot.** Hover a folder's size in a file list, then in the thumbnail grid. - [ ] The tooltip says where the number comes from and how old it is, for example "From the index, as of 14:03 (3 min ago)". - [ ] It mentions the index still building only while it really is. On Windows, look at the index status dot after the first check of `C:\`. - [ ] It does not stay blue because of folders such as `C:\Windows\CSC` or System Volume Information. Click the dot, untick that drive and tick it again. - [ ] A real "partial" warning (folders you yourself cannot open), if there was one, is still shown afterwards.
+8. **SMB shares and network paths.** On machine B open **Settings ▸ Machine ▸ Sharing** and add a share that its file server really serves (name, folder, read-only). On machine A, in a pane on machine B inside that folder, choose **Copy full path** on a file. - [ ] The clipboard holds a path starting with two backslashes and machine B's name. - [ ] **Shift+Enter** on a file there opens it in place, without copying the whole file first. - [ ] Outside a shared folder, Copy full path gives machine B's own path.
+9. **Dialogs.** Open **Help ▸ About**, then a copy dialog (**F5** in the Total Commander layout). - [ ] They are bigger than in 0.1.5 and never larger than the window. - [ ] Dragging the grip in the bottom-right corner resizes them, and Alt+arrow keys do too (Shift+Alt for bigger steps). - [ ] Close and reopen: the size is kept for that dialog. - [ ] In the Columns dialog (**View ▸ Columns**), Alt+↑/↓ moves a column and does not resize the dialog. - [ ] The copy dialog shows each machine's colour mark beside the source and the target, dimmed for a machine that is not online.
+10. **Multi-rename.** Mark a few files and open multi-rename. - [ ] The preview's Old name and New name columns can be dragged wider or narrower, and double-click fits them. - [ ] Names stay on one line, with the full name on hover. - [ ] "Changed only" hides the rows that do not change.
+11. **Speakers (needs Music Assistant).** In **Settings ▸ Connections**, give Music Assistant a wrong token and save. - [ ] The speaker picker and Settings keep saying the token was refused, with the time it was first refused, for a few minutes; they never switch to "not reachable" in between. Put the right token back.
+
+&nbsp;
+
+---
 &nbsp;
 
 ---
