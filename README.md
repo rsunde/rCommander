@@ -115,6 +115,10 @@ addresses. Your browser still talks only to its own agent, which passes requests
 pane can show any computer. There is no central server and no cloud: switch one computer off and the rest
 carry on. A guest signs in with the guest password and sees only the folders you share, read-only.
 
+**An honest note:** so far rCommander has been tested with two computers, a Windows PC and a Linux server.
+Three, ten or twenty should work the same way, but nobody has tried that yet. If you run more, please
+[tell us how it goes](https://github.com/rsunde/rCommander/issues).
+
 ![Several computers: the browser talks to the desktop's agent, which relays to the laptop and the home server with the shared key; the agents find each other by a beacon on the home network; a guest reaches shared folders read-only](docs/images/how-fleet.svg)
 
 **A copy between computers** runs on the receiving agent. It asks the sending agent which files there are,
