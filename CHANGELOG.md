@@ -8,6 +8,51 @@ Newest first. Each release on the [Releases page](https://github.com/rsunde/rCom
 
 ## Unreleased
 
+## 0.1.6
+
+*The small one, as promised.* 0.1.5 swore the next release would be smaller, and for once it kept its word. Most of this is what you found while living with 0.1.5: an update button that trusted week-old news, a status dot that sulked about folders Windows locks for everyone, a Copy path that forgot other machines speak SMB. Each fix came with a test that fails if it comes back, and a night of chasing tests that only failed when the computer was busy turned up one real bug as a bonus (the Music Assistant one, last line).
+
+### Machines and updates
+
+- Update all in Help > About > Machines now asks every machine to check for a new release first, so a machine with an old cached check is no longer skipped. Each machine shows when it was last checked and has a "Check now" button, and a machine that was not checked or could not be reached is listed as unknown, never as up to date.
+- Help > About > Machines now has a Roll back button on each machine that can return to its previous version (it asks first), and a machine that cannot be updated with one click shows why and the command to run by hand.
+- Right-click a machine > Properties now opens Help > About > Machines on that machine's card (version, channel, update, colour, reachability and why it is not online), instead of a short pop-up note.
+- The tray's Jobs menu now also lists the jobs running on your other machines, under each machine's name; one that needs an answer turns the tray icon to "needs you", and a machine whose jobs could not be read says so instead of showing nothing. Clicking a job opens it on that machine.
+
+### Files, folders and opening
+
+- Opening the same unchanged file from another machine (or from inside an archive) again now reuses the copy already on this computer instead of downloading it every time; a copy you edited is never reused or overwritten.
+- Open with... now asks Windows Explorer for its own "Open with" chooser instead of the old rundll32 call, which showed nothing on Windows 11 build 26100; this is changed in code and still waits for a check on a real machine. The agent log now says "Requested" for it, not "Opened".
+- Tools > Opened copies now shows how many copies there are and how much space they take, and has "Remove all unchanged" to clear every copy you have not edited (copies you edited, or that an app still has open, stay). "Remove all, losing changes" removes edited copies too, after one confirmation. Settings > Storage has an "Opened copies" row whose Clean does the same unchanged-only clear.
+- Settings > Machine > Sharing now has "SMB shares of this machine": list the shares your file server really serves (name, the folder it serves, read-only) when rCommander cannot find them itself, for example Samba running in Docker. rCommander does not create the share; it must already exist in Samba. Other machines then open a file from here in place instead of copying the whole file first.
+- Copy full path and Copy folder path on a file that lives on another machine now give its network (UNC) path, such as a path starting with two backslashes and the machine name, when that machine shares the folder over SMB and answers; otherwise you still get the machine's own path.
+- Hover a folder's size in a file list (or its tile) and it now says where the number comes from and how old it is, for example "From the index, as of 14:03 (3 min ago)"; it says so plainly when the index is still building, and warns when the drive has no live updates and was last re-checked a while ago.
+- The index status dot no longer stays blue because of folders Windows keeps closed to everyone (such as CSC or System Volume Information), and turning the index off and on no longer hides a real "partial" warning.
+
+### Dialogs
+
+- Dialogs (About and the other pop-up windows) are about 50 % bigger, never larger than the window, and you can resize them: drag the grip in the bottom-right corner or press Alt+arrow keys (Shift = bigger steps). The size is remembered per dialog. Windows that were already large (Settings, theme gallery, report) keep their size; narrow screens still use the full width.
+- The copy and move dialog (and Add to transfer) show each machine's colour mark beside the source and the target, dimmed when that machine is not online.
+- Multi-rename: the preview columns can be dragged wider or narrower (double-click fits), names stay on one line with the full text on hover, Old name shows the name only, there is a "changed only" filter, and the dialog is wider.
+
+### Speakers
+
+- When Music Assistant refuses the token (or needs a newer rCommander), the speaker picker and Settings now keep saying so, with the time it was first refused, while rCommander retries; before, the reason flipped to "not reachable" between retries.
+- The tray's Jobs menu now also lists the jobs running on your other machines, under each machine's name; one that needs an answer turns the tray icon to "needs you", and a machine whose jobs could not be read says so instead of showing nothing. Clicking a job opens it on that machine.
+- Hover a folder's size in a file list (or its tile) and it now says where the number comes from and how old it is, for example "From the index, as of 14:03 (3 min ago)"; it says so plainly when the index is still building, and warns when the drive has no live updates and was last re-checked a while ago.
+- Dialogs (About and the other pop-up windows) are about 50 % bigger, never larger than the window, and you can resize them: drag the grip in the bottom-right corner or press Alt+arrow keys (Shift = bigger steps). The size is remembered per dialog. Windows that were already large (Settings, theme gallery, report) keep their size; narrow screens still use the full width.
+- The copy and move dialog (and Add to transfer) show each machine's colour mark beside the source and the target, dimmed when that machine is not online.
+- Multi-rename: the preview columns can be dragged wider or narrower (double-click fits), names stay on one line with the full text on hover, Old name shows the name only, there is a "changed only" filter, and the dialog is wider.
+- Tools > Opened copies now shows how many copies there are and how much space they take, and has "Remove all unchanged" to clear every copy you have not edited (copies you edited, or that an app still has open, stay). "Remove all, losing changes" removes edited copies too, after one confirmation. Settings > Storage has an "Opened copies" row whose Clean does the same unchanged-only clear.
+- Settings > Machine > Sharing now has "SMB shares of this machine": list the shares your file server really serves (name, the folder it serves, read-only) when rCommander cannot find them itself, for example Samba running in Docker. rCommander does not create the share; it must already exist in Samba. Other machines then open a file from here in place instead of copying the whole file first.
+- Copy full path and Copy folder path on a file that lives on another machine now give its network (UNC) path, such as a path starting with two backslashes and the machine name, when that machine shares the folder over SMB and answers; otherwise you still get the machine's own path.
+- Right-click a machine > Properties now opens Help > About > Machines on that machine's card (version, channel, update, colour, reachability and why it is not online), instead of a short pop-up note.
+- Help > About > Machines now has a Roll back button on each machine that can return to its previous version (it asks first), and a machine that cannot be updated with one click shows why and the command to run by hand.
+- The index status dot no longer stays blue because of folders Windows keeps closed to everyone (such as CSC or System Volume Information), and turning the index off and on no longer hides a real "partial" warning.
+- Opening the same unchanged file from another machine (or from inside an archive) again now reuses the copy already on this computer instead of downloading it every time; a copy you edited is never reused or overwritten.
+- Open with... now asks Windows Explorer for its own "Open with" chooser instead of the old rundll32 call, which showed nothing on Windows 11 build 26100; this is changed in code and still waits for a check on a real machine. The agent log now says "Requested" for it, not "Opened".
+- Update all in Help > About > Machines now asks every machine to check for a new release first, so a machine with an old cached check is no longer skipped. Each machine shows when it was last checked and has a "Check now" button, and a machine that was not checked or could not be reached is listed as unknown, never as up to date.
+
 ## 0.1.5
 
 *The story of 0.1.5, or how a short wish list became the biggest release yet.* The list really was short: open a file in its own app, stop calling a machine "online" when it is not answering, keep a log. Then the file manager did what file managers do and started organising. Opening a file meant knowing which machine you sit at. Telling the truth meant every chip, banner and tray icon had to stop saying "online" out of politeness. A log needs somewhere to live, which means knowing how much room everything else takes, which means a Storage page, which means a budget, which means... you can see where this went. Each idea was small. Together they were not.
@@ -18,15 +63,15 @@ Newest first. Each release on the [Releases page](https://github.com/rsunde/rCom
 
 - A task's console and failure details now survive an agent restart. A failed task keeps them for 90 days (finished ones for 30), shows the error that stopped it, and its log export includes the console, the error and a timeline.
 - rCommander keeps a log of what it does, in the data folder, with old files removed automatically (Settings > Machine > Logs for the size and age limits). The tray menu and Help have Open logs folder.
-- Help > Report a problem... (and Report this... on a failed task) builds a diagnostics zip you read in full first, with paths, machine names and addresses masked and passwords and keys always removed. Nothing is sent: you save the zip and post it yourself in a prefilled GitHub issue.
+- Help > Report a problem... (and Report this... on a failed task) builds a diagnostics zip you read in full first, with paths, machine names and addresses masked as far as it can (masking is best effort, so check the preview) and passwords and keys always removed. Nothing is sent: you save the zip and post it yourself in a prefilled GitHub issue.
 - If rCommander stopped unexpectedly last time, it now says so and offers to report it.
 - Settings > Storage (also Tools > Storage...) shows every byte rCommander uses, what each part is for, and what clearing it does before you click. Caches can be cleared safely, history can be trimmed by age, your own data is never touched. An optional size budget clears the least useful parts by itself and lists what it did. A guided Move... shows the commands for putting the data on another disk.
-- Open any file in the app your computer uses for it: Shift+Enter, File ▸ Open with default app, or Open with… on Windows. Files from your other machines open as a copy you can copy back.
+- Open any file in the app your computer uses for it: Shift+Enter, File ▸ Open with default app, or Open with… on Windows (on Windows 11 build 26100 Open with… currently shows no chooser). Files from your other machines open as a copy you can copy back.
 - Enter on a file the viewer cannot show now opens it in its app when you sit at that machine, instead of downloading it. On any other device, Enter, o and a double-click still download it; F3 and v still open the viewer.
 - Every panel can now go anywhere: drag the inspector, tasks, undo history, script console, playback or any side view by its header or tab to the left, right, top or bottom, into another panel as a tab, out as a floating window, or into a pane as a tab. A highlight shows where it will land.
 - Each side holds several panels as tabs or stacked one above the other, and every side, every split between panels and every floating window can be resized by dragging, with the arrow keys, or reset with a double-click.
 - Panels and whole sides collapse to labelled strips, tall at the left and right, wide at the top and bottom; the task strip shows running jobs and their progress, and a click on a collapsed task strip opens it again.
-- View ▸ Panels shows or hides each panel and moves the focused one; Move panel to… does it from the keyboard, and F6 steps through the open panels.
+- View ▸ Panels shows or hides each panel and moves the focused one; Move panel to… does it from the keyboard, and F6 steps through the open panels (not in the Total Commander, Far, Midnight Commander and Explorer key layouts, where F6 keeps its own job).
 - Right-click a panel's tab (also when it sits as a pane tab) for its placement menu: move, float, collapse, hide.
 - Personalities remember where the panels sit, so a saved personality brings its layout back (floating windows are not saved).
 - Applying a personality replaces the whole panel layout: the built-in ones that do not place panels hide the side bar, the bottom panel and the task panel; View ▸ Panels brings any of them back.
