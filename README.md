@@ -36,6 +36,8 @@ even after a restart.
 
 rCommander keeps an index of your drives and keeps it current as files change.
 Type a name and the results are there while you are still typing, across the whole machine.
+Or across **every machine at once**: one box, each hit in its machine's colour, and the results behave like
+any folder (new, not yet tried on real machines).
 
 ![19 hits across the whole machine in 28 ms, with the photo preview beside them](docs/images/instant-search.png)
 
@@ -45,6 +47,8 @@ Grew up on **Total Commander**? **Midnight Commander**? **Far**? Live in **yazi*
 **vifm**? Prefer **Explorer**, **Directory Opus** or **VS Code**?
 Pick a personality and rCommander takes on its keys, panes and look.
 And everything also works with the mouse alone.
+**Favourites** like Total Commander's hotlist, in groups, one star or Ctrl+D away.
+And a folder can keep its **own look**: the photos as big thumbnails, newest first, the downloads as a plain list.
 
 ![The Midnight Commander personality: blue panels, function-key bar, command line](docs/images/midnight-commander.png)
 
@@ -179,7 +183,7 @@ The installer needs the .NET 10 runtime and offers to install it when it is miss
 ## Update and uninstall
 
 Update: download the newer zip, unzip it, and run its `setup.ps1 update` (Linux: `setup.sh update`).
-Your settings, bookmarks and index are kept.
+Your settings, favourites and index are kept.
 
 Uninstall: run `setup.ps1 uninstall` from the installed program folder (Linux: `setup.sh uninstall`).
 Add `-Purge` / `--purge` to delete your rCommander data as well.
@@ -209,6 +213,8 @@ Open an [**issue**](../../issues/new/choose) and pick *Bug report* or *Idea*.
 
 rCommander runs on your own computers. It contacts the internet only to:
 
+- check GitHub for new rCommander releases (once a day, and at most every 15 minutes when you open it),
+  and download one when you press Update;
 - check GitHub once a day for updates of the helper programs it manages (ffmpeg, mpv, 7-Zip…),
   and download them when you press Install;
 - search and download themes from Open VSX when you open the theme gallery.
