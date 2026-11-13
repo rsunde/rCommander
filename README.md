@@ -21,6 +21,32 @@ from any browser in the house, even on your phone.
 
 &nbsp;
 
+### Welcome to the family
+
+rCommander is a family project, not a product. It is made by a very small team, one release at a time, and it has a
+memory. Releases come with a story in their notes, and the stories carry on: in the wiki, in the help, in the
+issues, from one version to the next. A joke in one release is answered in the next. A promise in the notes gets
+checked in the one after.
+
+So look around. All of it is part of the same house:
+
+- [**Releases**](../../releases): every version and its notes. Read them in order; the stories build.
+- [**What's new**](CHANGELOG.md): the same stories in one long scroll.
+- [**The wiki**](https://github.com/rsunde/rCommander/wiki): the long version: a five-minute tour, how it all fits
+  together, scripts, a glossary, and the bonus stories ([The Long Walk](https://github.com/rsunde/rCommander/wiki/The-Long-Walk),
+  [The Long Roll Call](https://github.com/rsunde/rCommander/wiki/The-Long-Roll-Call)).
+- [**Call to Arms**](https://github.com/rsunde/rCommander/wiki/Call-to-Arms): what we cannot test ourselves, the
+  testers who did, and their badges.
+- [**Issues**](../../issues): bug reports, ideas and test reports, all public. Good ones end up in the release notes,
+  with your name if you want it.
+- [**Discussions**](../../discussions): questions, opinions, and an argument about the name that runs until New Year
+  2028.
+- **rCommander itself**: Help ▸ About, Help ▸ What's new, and the occasional thing nobody wrote down.
+
+Pull up a chair.
+
+&nbsp;
+
 ---
 
 &nbsp;
