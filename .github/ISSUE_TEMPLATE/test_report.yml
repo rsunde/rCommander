@@ -7,6 +7,7 @@ body:
       value: |
         Thank you for testing. What we cannot test ourselves is listed on the [Call to Arms](https://github.com/rsunde/rCommander/wiki/Call-to-Arms) page.
         Test on a copy of your files, never on the only one.
+        **This report is public.** Leave out anything private: names of people, private paths, addresses, keys.
   - type: input
     id: version
     attributes:
@@ -49,3 +50,10 @@ body:
     attributes:
       label: What happened
       description: What you did and what you saw. Screenshots help. For something broken, Help ▸ Report a problem… builds a zip you can read first, with paths, machine names and addresses masked; drag it in here. Do not attach settings.json, it contains passwords and keys.
+  - type: checkboxes
+    id: credit
+    attributes:
+      label: Credit
+      description: Testers whose reports find a bug, confirm a setup we cannot test, or lead to a fix are named by their GitHub name in the release notes and on the Call to Arms page.
+      options:
+        - label: Name me in the release notes and on the Testers list

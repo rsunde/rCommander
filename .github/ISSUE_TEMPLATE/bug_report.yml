@@ -2,6 +2,10 @@ name: Bug report
 description: Something does not work as it should.
 labels: [bug]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        **This report is public.** Leave out anything private: names of people, private paths, addresses, keys.
   - type: input
     id: version
     attributes:
@@ -50,3 +54,10 @@ body:
     attributes:
       label: Diagnostics bundle
       description: "In rCommander: Help ▸ Report a problem… builds a zip you can read first, with paths, machine names and addresses masked. Save it and drag it into this box."
+  - type: checkboxes
+    id: credit
+    attributes:
+      label: Credit
+      description: When a report leads to a fix, its reporter is named by their GitHub name in the release notes and on the [Call to Arms](https://github.com/rsunde/rCommander/wiki/Call-to-Arms) page.
+      options:
+        - label: Name me in the release notes and on the Testers list
