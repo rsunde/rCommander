@@ -4,7 +4,8 @@ Newest first. Each release on the [Releases page](https://github.com/rsunde/rCom
 
 <!-- For maintainers: add a line under "Unreleased" with every user-visible fix or feature, in plain words, written
      for someone who uses rCommander, not for a developer. At release time rename "Unreleased" to the version.
-     The release workflow publishes the "## <version>" section as the release notes; a release without one fails. -->
+     The release workflow publishes the "## <version>" section as the release notes; a release without one fails.
+     Credit testers who asked for it: "(thanks @name, #12)" at the end of the line their report led to. -->
 
 ## Unreleased
 
@@ -13,6 +14,8 @@ Newest first. Each release on the [Releases page](https://github.com/rsunde/rCom
 *Sjutton också!* This one was going to be small. So was the one before it, and the one before that, and by now "this release will be small" is less a plan than a family tradition. When a Swede fails, they say *sjutton också!*, roughly "seventeen as well!", a curse so mild it is printed on children's books. It is also, by pure coincidence and no planning whatsoever, this version's name: 0.1.7, seventeen. So when this list grows longer than promised (it will, it already has), you know what to say. We said it first.
 
 *Zoom out.* See? It grew. For seven releases we stared so hard at files that we forgot to look up. Files live on drives, drives live in machines, and machines, it turns out, come in fleets. rCommander could tell you a file's size to the byte, but not whether the universe around it had room for one more. Now it can. We also pretended you own forty machines, just to see what would break. Quite a lot did. You probably don't own forty, but if you ever do, the header is ready.
+
+*Released on Friday the 13th.* In Italy, 17 is the unlucky number, so this is the unluckiest number we have ever shipped, on the unluckiest day we could find, in two countries at once. We checked for black cats, walked around every ladder, and updated our own machines first. Nothing went wrong. Something went right, which is suspicious.
 
 - Favourites, like Total Commander's directory hotlist: every pane has a star after its drive button, filled when the folder is a favourite. Click it (or press Ctrl+D in the Total Commander keys) for the favourites menu; right-click it to add or remove this folder. Bookmarks are now called favourites and nothing is lost: your letters (m and ' with a letter) still work.
 - Recent folders (in the favourites menu and Go ▸ Recent folders) no longer lists the folder you are in.
