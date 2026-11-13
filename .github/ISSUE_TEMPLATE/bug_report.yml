@@ -29,7 +29,7 @@ body:
     id: step
     attributes:
       label: Step in the install and test guide (if any)
-      placeholder: 3.3
+      placeholder: "3.3"
   - type: textarea
     id: what
     attributes:
