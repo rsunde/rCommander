@@ -3,3 +3,6 @@ contact_links:
   - name: Install and test guide
     url: https://github.com/rsunde/rCommander/blob/main/docs/install-and-test-guide.md
     about: Step-by-step install, setup, update and uninstall.
+  - name: Call to Arms (what we cannot test ourselves)
+    url: https://github.com/rsunde/rCommander/wiki/Call-to-Arms
+    about: Many machines, other systems, odd disks. Pick something, try it, send a test report.

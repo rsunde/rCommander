@@ -9,7 +9,7 @@ Install it on your desktop, your laptop and your home server,
 and each one opens the others' drives as if they were plugged in right here,
 from any browser in the house, even on your phone.
 
-[**Download**](../../releases/latest) · [What's new](CHANGELOG.md) · [Install guide](docs/install-and-test-guide.md) · [Report a bug](../../issues/new/choose) · [**Free wallpapers**](#bonus-the-long-walk)
+[**Download**](../../releases/latest) · [What's new](CHANGELOG.md) · [Install guide](docs/install-and-test-guide.md) · [Report a bug](../../issues/new/choose) · [Help us test](https://github.com/rsunde/rCommander/wiki/Call-to-Arms) · [**Free wallpapers**](#bonus-the-long-walk)
 
 &nbsp;
 
@@ -121,7 +121,8 @@ carry on. A guest signs in with the guest password and sees only the folders you
 
 **An honest note:** so far rCommander has been tested with two computers, a Windows PC and a Linux server.
 Three, ten or twenty should work the same way, but nobody has tried that yet. If you run more, please
-[tell us how it goes](https://github.com/rsunde/rCommander/issues).
+[tell us how it goes](https://github.com/rsunde/rCommander/issues/new?template=test_report.yml): the
+[Call to Arms](https://github.com/rsunde/rCommander/wiki/Call-to-Arms) lists everything we cannot test ourselves.
 
 ![Several computers: the browser talks to the desktop's agent, which relays to the laptop and the home server with the shared key; the agents find each other by a beacon on the home network; a guest reaches shared folders read-only](docs/images/how-fleet.svg)
 

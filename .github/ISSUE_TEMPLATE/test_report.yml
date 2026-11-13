@@ -1,0 +1,51 @@
+name: Test report
+description: You tried something, worked or not. "It just worked" counts too.
+title: "[Test] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for testing. What we cannot test ourselves is listed on the [Call to Arms](https://github.com/rsunde/rCommander/wiki/Call-to-Arms) page.
+        Test on a copy of your files, never on the only one.
+  - type: input
+    id: version
+    attributes:
+      label: rCommander version
+      description: Help ▸ About shows it.
+      placeholder: 0.1.7
+    validations:
+      required: true
+  - type: input
+    id: tested
+    attributes:
+      label: What did you test?
+      description: A step in the install and test guide, or a line from the Call to Arms page.
+      placeholder: "Part 13 step 33, or: three machines, Update all"
+    validations:
+      required: true
+  - type: dropdown
+    id: result
+    attributes:
+      label: How did it go?
+      options:
+        - It worked
+        - It worked, with something odd
+        - It did not work
+    validations:
+      required: true
+  - type: textarea
+    id: setup
+    attributes:
+      label: Your setup
+      description: Systems and versions, how many machines, how rCommander was installed (as a user, elevated, for every user), the drives, file systems or shares involved, the browser.
+      placeholder: |
+        2 × Windows 11, 1 × Debian 13 (install for every user)
+        NAS share over SMB, ext4 + ZFS
+        Firefox 151
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: What happened
+      description: What you did and what you saw. Screenshots help. For something broken, Help ▸ Report a problem… builds a zip you can read first, with paths, machine names and addresses masked; drag it in here. Do not attach settings.json, it contains passwords and keys.
