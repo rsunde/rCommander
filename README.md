@@ -187,9 +187,9 @@ The same zip works on Windows and Linux.
 
 **Windows 10 / 11, the easy way:** download `rCommander-Setup.exe` and `rCommander-<version>.zip` from the
 [latest release](../../releases/latest) into one folder and double-click the exe. It shows every step before it
-changes anything, installs without a console window, and then helps you connect your other computers.
-Windows may say "Windows protected your PC" because the file is not signed: choose **More info**, then **Run anyway**.
-The setup program is new and has so far been tried on one Windows 11 PC, so tell us if anything looks wrong.
+changes anything, is meant to install without a console window, and then helps you connect your other computers.
+Windows will probably say "Windows protected your PC" (expected for a new, unsigned program): choose **More info**, then **Run anyway**.
+The setup program is new and so far been tried only as a dry run, on one Windows 11 PC; a real install through it has not been tried yet, so tell us if anything looks wrong.
 
 **Windows by hand:** unzip, open PowerShell **as administrator** in the unzipped folder, and run:
 
