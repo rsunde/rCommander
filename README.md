@@ -185,7 +185,13 @@ The same zip works on Windows and Linux.
 
 ## Install
 
-**Windows 10 / 11:** unzip, open PowerShell **as administrator** in the unzipped folder, and run:
+**Windows 10 / 11, the easy way:** download `rCommander-Setup.exe` and `rCommander-<version>.zip` from the
+[latest release](../../releases/latest) into one folder and double-click the exe. It shows every step before it
+changes anything, installs without a console window, and then helps you connect your other computers.
+Windows may say "Windows protected your PC" because the file is not signed: choose **More info**, then **Run anyway**.
+The setup program is new and has so far been tried on one Windows 11 PC, so tell us if anything looks wrong.
+
+**Windows by hand:** unzip, open PowerShell **as administrator** in the unzipped folder, and run:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\setup.ps1 install -Lan
@@ -209,10 +215,10 @@ The installer needs the .NET 10 runtime and offers to install it when it is miss
 
 ## Update and uninstall
 
-Update: download the newer zip, unzip it, and run its `setup.ps1 update` (Linux: `setup.sh update`).
+Update: on Windows run `rCommander-Setup.exe` again with the newer zip next to it, or download the newer zip, unzip it, and run its `setup.ps1 update` (Linux: `setup.sh update`).
 Your settings, favourites and index are kept.
 
-Uninstall: run `setup.ps1 uninstall` from the installed program folder (Linux: `setup.sh uninstall`).
+Uninstall: on Windows use Installed apps (or run `rCommander-Setup.exe` again), or run `setup.ps1 uninstall` from the installed program folder (Linux: `setup.sh uninstall`).
 Add `-Purge` / `--purge` to delete your rCommander data as well.
 
 Details: [install and test guide](docs/install-and-test-guide.md), Parts 4 and 5.
