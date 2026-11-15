@@ -189,7 +189,7 @@ The same zip works on Windows and Linux.
 [latest release](../../releases/latest) into one folder and double-click the exe. It shows every step before it
 changes anything, is meant to install without a console window, and then helps you connect your other computers.
 Windows will probably say "Windows protected your PC" (expected for a new, unsigned program): choose **More info**, then **Run anyway**.
-The setup program is new and has so far been tried only as a dry run, on one Windows 11 PC; a real install through it has not been tried yet, so tell us if anything looks wrong.
+The setup program is new, so it is worth testing a bit, but it should work fine (tried on one Windows 11 PC: dry runs and a real repair). Tell us if anything looks wrong.
 
 **Windows by hand:** unzip, open PowerShell **as administrator** in the unzipped folder, and run:
 
