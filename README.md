@@ -221,7 +221,7 @@ Update: on Windows run `rCommander-Setup.exe` again with the newer zip next to i
 Your settings, favourites and index are kept.
 
 Uninstall: on Windows use Installed apps (or run `rCommander-Setup.exe` again), or run `setup.ps1 uninstall` from the installed program folder (Linux: `setup.sh uninstall`).
-Add `-Purge` / `--purge` to delete your rCommander data as well.
+Uninstalling never removes your settings, favourites, folder looks, themes, scripts and layouts: they stay in the data folder, and the next install picks them up again. Only **Also delete my data** in the setup program, or `-Purge` / `--purge`, deletes them, and it asks first.
 
 Details: [install and test guide](docs/install-and-test-guide.md), Parts 4 and 5.
 

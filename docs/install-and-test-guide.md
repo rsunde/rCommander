@@ -491,6 +491,8 @@ You can also go back from inside rCommander:
 
 ### Step 5.1 — Remove the program, keep your data
 
+Uninstalling never removes your settings, favourites, folder looks, themes, scripts and layouts: they stay in the data folder, and the next install picks them up again. Only **Also delete my data** in the setup program, or `-Purge` / `--purge`, deletes them, and it asks first.
+
 ```powershell
 & "$env:LOCALAPPDATA\Programs\rCommander\current\setup.ps1" uninstall
 ```
@@ -504,7 +506,7 @@ You can also go back from inside rCommander:
 
 Repeat Step 1.3.
 
-- [ ] Your settings and bookmarks are back.
+- [ ] Your settings, favourites and folder looks are back.
 
 &nbsp;
 
@@ -514,7 +516,7 @@ Repeat Step 1.3.
 & "$env:LOCALAPPDATA\Programs\rCommander\current\setup.ps1" uninstall -Purge
 ```
 
-Type `DELETE` when asked.
+Type `DELETE` when asked. This is the only step that deletes your settings, favourites and folder looks.
 
 - [ ] Nothing of rCommander is left (no icon, the address does not open).
 
@@ -568,7 +570,7 @@ Update with the newer zip:
 bash rCommander-<newer version>/setup.sh update
 ```
 
-Uninstall, keeping your data:
+Uninstall, keeping your data (settings, favourites, folder looks and the rest stay; only `--purge` deletes them):
 
 ```bash
 bash ~/.local/opt/rCommander/current/setup.sh uninstall
@@ -784,7 +786,7 @@ Windows only. `rCommander-Setup.exe` is new. So far it has been tried on one Win
 7. **Run it again.** Double-click the exe once more. - [ ] It says rCommander is already installed, with version, running state, LAN mode and folder. - [ ] With only the same zip next to it, Update is not offered; **Repair** and **Connect your computers** are.
 8. **Update.** Put a newer zip next to the exe, run it and choose **Update**. - [ ] Settings, favourites and index are still there, and the old version stays as the one to go back to. - [ ] **Installed apps** shows the new version.
 9. **Repair.** Delete the `rCommander Tray` logon task (Task Scheduler), run the exe and choose **Repair**. - [ ] The task is back and the tray icon starts.
-10. **Uninstall, keeping data.** In **Installed apps** choose rCommander ▸ **Uninstall** (try **Modify** once as well). - [ ] The window lists what will go, with sizes, and says the .NET runtime stays. - [ ] "Also delete my data" is unticked; leave it. - [ ] Afterwards the program folder, logon tasks, firewall rules and Installed apps entry are gone, `%LOCALAPPDATA%\rCommander` is still there, and no window flashed up. - [ ] The summary says the setup itself is removed when you close the window; after closing, the setup copy and the program folder are gone within a few seconds.
+10. **Uninstall, keeping data.** In **Installed apps** choose rCommander ▸ **Uninstall** (try **Modify** once as well). - [ ] The window lists what will go, with sizes, and says the .NET runtime stays. - [ ] "Also delete my data" is unticked; leave it. - [ ] After a later install your settings, favourites and folder looks are all back. - [ ] Afterwards the program folder, logon tasks, firewall rules and Installed apps entry are gone, `%LOCALAPPDATA%\rCommander` is still there, and no window flashed up. - [ ] The summary says the setup itself is removed when you close the window; after closing, the setup copy and the program folder are gone within a few seconds.
 11. **Uninstall, deleting data.** Install again, then uninstall with the data box ticked. - [ ] The window named the data folder and its size and said it cannot be undone, and the folder is gone afterwards.
 12. **Cancel and failure.** Start an install and press **Cancel** while a step before "stopping rCommander" runs. - [ ] Nothing was stopped or switched and the temporary folder is gone. Optional: with winget missing and the .NET 10 runtime missing, the runtime step fails in plain words with buttons to try again or open the download page.
 13. **Say no, twice open, odd folders.** Uninstall first. (a) Install with LAN on and answer **No** when Windows asks about the firewall. - [ ] The install still finishes: the firewall row says permission was declined and the rules were not added, the done screen lists it under Not done, and the saved summary says so too. - [ ] On the Connect screen **Add the rules** asks again and adds them. (b) With the setup window open, double-click the exe again. - [ ] A small message says rCommander Setup is already open; no second window. (c) Before installing, press **Change folders…** and type a folder that already holds files (for example your Downloads folder), then a relative name such as `Apps`. - [ ] The first becomes `<that folder>\rCommander` and the screen says so before Install; the relative name is refused in plain words.
