@@ -11,6 +11,8 @@ Newest first. Each release on the [Releases page](https://github.com/rsunde/rCom
 
 ## 0.1.7
 
+> **Updated 2026-11-15:** the Windows setup program `rCommander-Setup.exe` was added to this release, and `rCommander-0.1.7.zip` and `SHA256SUMS` were swapped for a rebuild whose only change is the setup script it needs (`setup.ps1`, plus `README-INSTALL.md`); rCommander itself is the same 0.1.7. The setup program is new, so it is worth testing a bit, but it should work fine: put it next to the zip and double-click it.
+
 *Sjutton också!* This one was going to be small. So was the one before it, and the one before that, and by now "this release will be small" is less a plan than a family tradition. When a Swede fails, they say *sjutton också!*, roughly "seventeen as well!", a curse so mild it is printed on children's books. It is also, by pure coincidence and no planning whatsoever, this version's name: 0.1.7, seventeen. So when this list grows longer than promised (it will, it already has), you know what to say. We said it first.
 
 *Zoom out.* See? It grew. For seven releases we stared so hard at files that we forgot to look up. Files live on drives, drives live in machines, and machines, it turns out, come in fleets. rCommander could tell you a file's size to the byte, but not whether the universe around it had room for one more. Now it can. We also pretended you own forty machines, just to see what would break. Quite a lot did. You probably don't own forty, but if you ever do, the header is ready.
