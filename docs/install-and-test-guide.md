@@ -26,9 +26,42 @@ rCommander version: ______________________
 
 &nbsp;
 
-**The easy way:** download `rCommander-Setup.exe` next to the zip and double-click it. It removes, installs, updates and connects without PowerShell; Part 15 walks through it. It is new, so it is worth testing a bit, but it should work fine. The steps below do the same by hand. Linux and macOS have no setup program and don't need one at the moment: Linux uses `setup.sh` (Part 6), and macOS is not supported yet.
+There are two ways to install on Windows: the **setup program** (recommended, no PowerShell) or **by hand** in
+PowerShell (Steps 1.1 to 1.3). Both end at Step 1.4. Linux and macOS have no setup program and don't need one at the
+moment: on Linux `setup.sh` does it with one command (Part 6), and macOS is not supported yet.
+
+Uninstalling never removes your settings, favourites, folder looks, themes, scripts and layouts. Only
+**Also delete my data** in the setup program, or `-Purge`, deletes them, and it asks first.
 
 &nbsp;
+
+### With the setup program (recommended)
+
+The setup program is new, so it is worth testing a bit, but it should work fine. Part 15 has the full list of checks.
+
+1. **Get the files.** From the [Releases page](https://github.com/rsunde/rCommander/releases/latest), download
+   `rCommander-Setup.exe`, `rCommander-<version>.zip` and `SHA256SUMS` into one new, empty folder, for example
+   `Downloads\rCommander`. Don't unzip anything: the setup program does that.
+2. **Start it.** Double-click `rCommander-Setup.exe`. Windows will probably say "Windows protected your PC" (the
+   program is new and not signed): choose **More info**, then **Run anyway**.
+   - [ ] The zip is listed with its version and "checksum OK".
+3. **Already installed?** If an older rCommander is on this PC, the setup program says so and offers **Update**,
+   **Repair**, **Connect your computers** and **Uninstall**. Choose **Update**; there is no need to uninstall first.
+4. **Choose and install.** Tick **Let my other computers reach this one** if you want to use rCommander from your
+   phone or your other computers (this is the same as `-Lan`, explained in Step 1.3). Keep **Start rCommander when I
+   sign in to Windows** ticked. Read **What will happen**, then press **Install**.
+   - [ ] With the first box ticked, Windows asks for permission once (for the firewall rules). Answer **Yes**.
+   - [ ] Every step ticks off, and no console window appears.
+   - [ ] The last screen lists what was changed, and an rCommander icon appeared by the clock.
+5. **Connect your computers.** With the first box ticked, **Next: connect your computers** helps you share the key
+   between your computers (on the first one choose **This is my first computer**). You can also press
+   **Close setup** and do it later in rCommander, see Step 2.3.
+
+Then go on with Step 1.4.
+
+&nbsp;
+
+### By hand in PowerShell
 
 ### Step 1.1 — Remove an old version (skip if rCommander was never installed)
 
@@ -38,10 +71,11 @@ press the Windows key, type `PowerShell`, right-click it, choose **Run as admini
 Paste this and press Enter:
 
 ```powershell
-& "$env:LOCALAPPDATA\Programs\rCommander\current\setup.ps1" uninstall -Purge
+& "$env:LOCALAPPDATA\Programs\rCommander\current\setup.ps1" uninstall
 ```
 
-When it asks, type `DELETE` and press Enter.
+This keeps your settings, favourites and folder looks. To start completely fresh instead, add `-Purge` and type
+`DELETE` when it asks: that deletes them too.
 
 - [ ] It finished without red error text.
 - [ ] The rCommander icon by the clock is gone.
