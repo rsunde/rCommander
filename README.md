@@ -178,8 +178,10 @@ Go to [**Releases**](../../releases/latest) and download two files into one fold
 
 - `rCommander-<version>.zip`
 - `SHA256SUMS`
+- Windows only: `rCommander-Setup.exe`, the setup program
 
-The same zip works on Windows and Linux.
+The same zip works on Windows and Linux. Linux and macOS users don't need a setup program at the moment:
+on Linux `setup.sh` in the zip does the install with one command, and macOS is not supported yet.
 
 &nbsp;
 
@@ -197,7 +199,7 @@ The setup program is new, so it is worth testing a bit, but it should work fine 
 powershell -ExecutionPolicy Bypass -File .\setup.ps1 install -Lan
 ```
 
-**Linux:** unzip, open a terminal in that folder, and run:
+**Linux** (no setup program needed): unzip, open a terminal in that folder, and run:
 
 ```bash
 bash setup.sh install --lan

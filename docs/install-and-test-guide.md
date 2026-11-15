@@ -26,6 +26,10 @@ rCommander version: ______________________
 
 &nbsp;
 
+**The easy way:** download `rCommander-Setup.exe` next to the zip and double-click it. It removes, installs, updates and connects without PowerShell; Part 15 walks through it. It is new, so it is worth testing a bit, but it should work fine. The steps below do the same by hand. Linux and macOS have no setup program and don't need one at the moment: Linux uses `setup.sh` (Part 6), and macOS is not supported yet.
+
+&nbsp;
+
 ### Step 1.1 — Remove an old version (skip if rCommander was never installed)
 
 Open **PowerShell as administrator**:
@@ -760,6 +764,30 @@ Needs a build with wallpapers, signed in as the owner. Step 5 needs a laptop on 
 5. **Battery and reduced motion (laptop).** Unplug the laptop with a live wallpaper on. - [ ] It stops moving (one frame) and the blur turns off. Turn on "reduce motion" in the operating system. - [ ] A live wallpaper shows one still frame.
 6. **A guest.** Sign in as a guest in another browser. - [ ] The wallpaper dialog lists None and the built-ins only: no upload, no scripts, no import. - [ ] Ctrl+Alt+B works there too.
 7. **Share one.** In the dialog click **Export to a file...** and import the file again. - [ ] A `.rcwall.json` is saved, and importing it adds the wallpaper with its picture.
+
+&nbsp;
+
+&nbsp;
+
+---
+
+## Part 15 — Windows installer
+
+Windows only. `rCommander-Setup.exe` is new. So far it has been tried on one Windows 11 PC: dry runs (`--dry-run --debug`, nothing changed), a real repair, and its Connect screen. A real first install, update and uninstall through the exe have not been tried yet. It is worth testing a bit, but it should work fine; go step by step, start with step 1, and report anything odd as described under Reporting. Step 6 needs a second computer.
+
+1. **Dry run first.** Put `rCommander-Setup.exe`, `rCommander-<version>.zip` and `SHA256SUMS` in one folder. Before running anything, write down what is on the PC now: whether the folders `%LOCALAPPDATA%\Programs\rCommander` and `%LOCALAPPDATA%\rCommander` exist, the output of `schtasks /Query /TN "rCommander Agent"`, the output of `Get-NetFirewallRule -Group rCommander`, and whether Installed apps lists rCommander. Then open PowerShell in that folder, run `.\rCommander-Setup.exe --dry-run --debug`, go through the screens and press Install. - [ ] The steps tick off and say nothing was changed. - [ ] Afterwards your written-down list is exactly the same: no new folder, task, firewall rule or Installed apps entry. - [ ] No console window appeared and no `%TEMP%\rCommander-setup-*` folder is left.
+2. **The start screen.** Double-click the exe with no arguments. - [ ] Windows may show "Windows protected your PC" (the exe is not signed): choose **More info**, then **Run anyway**. Note what you saw. - [ ] The zip is listed with its size and "checksum OK". - [ ] "What will happen" names the program folder, the data folder, the two logon tasks, the two firewall rules and the Installed apps entry, with real paths.
+3. **Install.** Keep both checkboxes ticked and press **Install**. - [ ] Windows asks for permission once, for the firewall, and no console or PowerShell window shows up at any point, including while that question is open. - [ ] Each step ticks off and the last one removes the temporary folder. - [ ] The done screen lists what changed and nothing that did not happen.
+4. **What it really did.** - [ ] `%LOCALAPPDATA%\Programs\rCommander\<version>` exists and `current` points to it. - [ ] The tray icon is by the clock and <http://localhost:8223> opens. - [ ] **Settings ▸ Apps ▸ Installed apps** lists rCommander with its version. - [ ] A copy of the setup program sits in `%LOCALAPPDATA%\Programs\rCommander`. - [ ] The zip and `SHA256SUMS` you downloaded are untouched.
+5. **Connect, first computer.** Press **Next: connect your computers** and choose **This is my first computer**. - [ ] A key is shown with **Copy** and **Save to a file…**. - [ ] The key shows nowhere else: not in the step list, the log or a saved summary. - [ ] The checklist ticks only what is true now (LAN mode, firewall rules, key set); "another computer reached" says none yet.
+6. **Connect, second computer.** Install there as in steps 2 and 3, then choose **I already use rCommander on another computer** and paste the key. - [ ] A key shorter than 32 characters is refused in plain words. - [ ] The first computer shows as connected within about a minute. Paste a wrong key once: it says "different key". Run the exe again on a computer that is already connected and choose **Connect your computers**: - [ ] it says it is already connected and names the other computer, with no choice to make; **Use a different key…** shows the two choices.
+7. **Run it again.** Double-click the exe once more. - [ ] It says rCommander is already installed, with version, running state, LAN mode and folder. - [ ] With only the same zip next to it, Update is not offered; **Repair** and **Connect your computers** are.
+8. **Update.** Put a newer zip next to the exe, run it and choose **Update**. - [ ] Settings, favourites and index are still there, and the old version stays as the one to go back to. - [ ] **Installed apps** shows the new version.
+9. **Repair.** Delete the `rCommander Tray` logon task (Task Scheduler), run the exe and choose **Repair**. - [ ] The task is back and the tray icon starts.
+10. **Uninstall, keeping data.** In **Installed apps** choose rCommander ▸ **Uninstall** (try **Modify** once as well). - [ ] The window lists what will go, with sizes, and says the .NET runtime stays. - [ ] "Also delete my data" is unticked; leave it. - [ ] Afterwards the program folder, logon tasks, firewall rules and Installed apps entry are gone, `%LOCALAPPDATA%\rCommander` is still there, and no window flashed up. - [ ] The summary says the setup itself is removed when you close the window; after closing, the setup copy and the program folder are gone within a few seconds.
+11. **Uninstall, deleting data.** Install again, then uninstall with the data box ticked. - [ ] The window named the data folder and its size and said it cannot be undone, and the folder is gone afterwards.
+12. **Cancel and failure.** Start an install and press **Cancel** while a step before "stopping rCommander" runs. - [ ] Nothing was stopped or switched and the temporary folder is gone. Optional: with winget missing and the .NET 10 runtime missing, the runtime step fails in plain words with buttons to try again or open the download page.
+13. **Say no, twice open, odd folders.** Uninstall first. (a) Install with LAN on and answer **No** when Windows asks about the firewall. - [ ] The install still finishes: the firewall row says permission was declined and the rules were not added, the done screen lists it under Not done, and the saved summary says so too. - [ ] On the Connect screen **Add the rules** asks again and adds them. (b) With the setup window open, double-click the exe again. - [ ] A small message says rCommander Setup is already open; no second window. (c) Before installing, press **Change folders…** and type a folder that already holds files (for example your Downloads folder), then a relative name such as `Apps`. - [ ] The first becomes `<that folder>\rCommander` and the screen says so before Install; the relative name is refused in plain words.
 
 &nbsp;
 
