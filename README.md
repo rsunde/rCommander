@@ -57,6 +57,7 @@ Windows and Linux side by side, in the same panes.
 Copy a folder from the laptop to the server with a keypress: the computers talk to each other directly,
 your browser is not in the middle, and a copy that loses the network **picks up where it stopped**,
 even after a restart.
+Phones, tablets and e-readers you plug in show up as drives too (tried with one e-reader so far).
 
 ### Search that does not make you wait
 
@@ -88,8 +89,10 @@ one step back, even when the files were on another computer.
 
 Videos that browsers refuse (MKV, HEVC, 10-bit, surround sound) play anyway,
 converted on the fly, on the graphics card when there is one.
-E-books that remember your page. Markdown and HTML rendered, code highlighted the way GitHub does it,
+E-books that remember your page. Word documents as real pages, with their margins, headers and footnotes;
+LibreOffice and RTF formatted on a white page. Markdown and HTML rendered, code highlighted the way GitHub does it,
 PDFs, photos with their camera details, music with its tags.
+How the viewer learnt all that: [The Long Read](https://github.com/rsunde/rCommander/wiki/The-Long-Read).
 Zip, 7z, tar and rar open like folders, and you can copy files **into** a zip as if it were one.
 
 ![An HEVC video playing in the browser, transcoded on the fly on the graphics card](docs/images/video-transcoding.png)
@@ -191,6 +194,8 @@ on Linux `setup.sh` in the zip does the install with one command, and macOS is n
 [latest release](../../releases/latest) into one folder and double-click the exe. It shows every step before it
 changes anything, is meant to install without a console window, and then helps you connect your other computers.
 Windows will probably say "Windows protected your PC" (expected for a new, unsigned program): choose **More info**, then **Run anyway**.
+With Smart App Control turned on, Windows blocks rCommander outright and offers no Run anyway: it only lets
+signed programs through, and rCommander is not signed.
 The setup program is new, so it is worth testing a bit, but it should work fine (tried on one Windows 11 PC: dry runs and a real repair). Tell us if anything looks wrong.
 
 **Windows by hand:** unzip, open PowerShell **as administrator** in the unzipped folder, and run:
