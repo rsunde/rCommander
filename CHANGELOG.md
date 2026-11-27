@@ -9,6 +9,71 @@ Newest first. Each release on the [Releases page](https://github.com/rsunde/rCom
 
 ## Unreleased
 
+## 0.1.8
+
+*Linux moves in.* rCommander has run on Linux since the first release, but Linux lived in the guest room: the agent worked there, and the tests ran somewhere else. Not any more. Every test now passes on Linux too, run natively on the Linux boot of the same PC, and every push checks it again so it stays that way. On the same day the old Windows-only window this whole project started as retired. The web UI had been doing its job since 0.1.0; the old window left quietly, and nobody had to ask twice.
+
+*The rest of the house.* Phones, tablets and e-readers you plug in now show up as drives (tried with one e-reader so far, so bring yours). Word and RTF documents open in the viewer as real pages, with their margins, headers and footnotes, instead of a polite pile of text. And the agent no longer crashes on its way out the door: on Linux it left a core dump behind every time the service stopped, like a guest who slams it. This one was going to be small. It grew on two operating systems at once, which is at least new.
+
+### Phones, tablets and e-readers
+
+- Phones, tablets and e-readers plugged into a computer now show up as drives, under their own name and one per storage (such as "Supernote Nomad · Internal shared storage"). Every one of your computers can browse them.
+- On a device you can copy to and from it, make a new folder, rename and delete. There is no undo and no recycle bin there, so a delete on a device is for good.
+- So far this has been tried with one e-reader (a Supernote Nomad) on both boots of one PC, Linux and Windows 11: reading, copying both ways, copying on the device, new folder, rename and delete (overwriting on Linux only). Other devices are still to be tried.
+- On Linux with KDE, rCommander and Dolphin can use a device at the same time. Elsewhere, a device another program holds says which program has it and offers Retry.
+- Opening a device before rCommander has met its storages goes straight into the storage when there is only one, instead of stopping at a folder named with a row of numbers. A device with more than one (a phone and its SD card) lists them by name, such as "Internal shared storage" and "SD card". Not yet tried with a real device.
+- rCommander lets go of a device 30 seconds after you last used it, so other programs can have it back. Go ▸ Release this MTP device lets go at once.
+- A device plugged into a computer without a desktop session, such as a home server, is not supported.
+
+### Documents in the viewer
+
+- Word (.docx) documents now open in the viewer the way they look in Word: real pages with their size and margins, headers and footers, fonts, tables, pictures and footnotes. A document whose layout the viewer cannot read is shown as plain text flow instead, and the viewer says so.
+- LibreOffice (.odt) and RTF documents open formatted on a white page, and older Word (.doc) files as plain text. The inspector previews them all; for Word it shows the plain text flow.
+- RTF documents (WordPad and older Word files) read much better: bullet and numbered lists, headings, page breaks, headers and footers, footnotes with links, tables of contents with dot leaders, nested and merged tables, borders and spacing. A line above the page says what was left out, such as old Windows pictures.
+- Enter still opens a document in its own app when it can. When it cannot, the document now opens in the viewer instead of downloading.
+
+### Menus, tabs and refreshing
+
+- The menu bar went on a diet. Anything you can do by right-clicking the thing itself (a file, a tab, a column header, a splitter, a task, a machine, a drive, a favourite) now lives only there, so the menus at the top keep what is not about one particular thing. The basics stay in both places: undo and redo, cut, copy and paste, copy path, find and filter, new file, new folder, upload, Properties and Sign out, plus the toolbar and menu bar switches and Reset panels, so a hidden toolbar can always come back.
+- Sorting and columns are in the column header's right-click menu and the Sort button in the status bar; list modes, hidden files and the folder's look are in the right-click menu of the empty part of the list.
+- The new tab, split right and split down buttons now sit together right after the last tab, where your eyes already are, instead of at the far end of the tab bar. Settings ▸ Appearance ▸ "New tab and split buttons" puts them back at the right end.
+- Refreshing a folder is easier: Ctrl+R in the file list (F5 too in the Explorer and XYplorer layouts; layouts that use Ctrl+R for something else keep it), Refresh in the right-click menu of a file or folder, or a click on the pane's "live" label.
+- While it refreshes, the label says "refreshing…" and then "refreshed" in yellow for a moment, so you can see it happened.
+- The drive list (the drive button, Alt+F1) now has a right-click menu too: right-click a disk, a device or a machine there to open it, open it in a new tab, release a device or see its properties. Before, a right-click there did nothing at all.
+
+### Tasks and files
+
+- The task panel is tidier: one column at any width, running and waiting tasks on top (newest first), a thin line, then the finished ones (newest first).
+- A task takes one or two lines and shows its disk. Click it to unfold its progress, its own speed graph, its files and its buttons.
+- Clear finished now really clears the finished tasks, and they stay cleared.
+- On Linux, copies, moves and the other file tasks now go through a folder's files in name order, as on Windows, so a task's file list is alphabetical there too.
+- On Linux, the inspector now shows who owns a file or folder (owner:group). When rCommander may not write somewhere, it says why, for example "Owned by root (group root). The tray agent runs as alice, which may only read here." A copy, move, rename or delete refused for that reason says the same in the task panel.
+- On Windows, the inspector says when a file has the read-only attribute.
+
+### Index and search
+
+- On Linux, and on Windows when rCommander runs without administrator rights, a folder that a program unpacks somewhere else and then moves into place (an updater, say) now shows up in the index with all its files, not as an empty folder.
+- Such a move, like Chrome's hourly update, no longer sends the index back over the whole drive: only that folder is read. A folder moved in from a place the index leaves out now shows its files at once.
+- Skipping several folders quickly in the index details no longer loses one of them on the way: every skip now lands in the list of left-out folders.
+- Skipping a folder re-reads only the drive it is on, not every drive of the machine.
+- A drive with several unreadable folders has a "Skip all" button: one confirmation, one change.
+- A folder you just skipped shows "skipped · walking again" until its drive has been read again, so a skip that worked no longer looks like it failed.
+- The index details say how many folders are left out of the index, with an Edit link to that list in Settings ▸ Index.
+- The index details are wider, so long folder paths fit.
+- The bottom status bar has its room back: the index dot and the "Index: on/off" chip are gone from it. The index badge beside the machine button is now always there (a quiet dot while all is well) and opens the same details. "Use index" is still in the View menu, the command palette and Settings.
+- Fleet search: clicking a lit kind chip (Photos, Videos, Music, Documents, Archives) now takes its word out of the search again. Before, it put the word in quotes, which left a search for files named "photos" behind and piled up with every further click.
+
+### Installing
+
+- Windows with Smart App Control turned on blocks rCommander outright, with no Run anyway: it only lets signed programs through, and rCommander is not signed. The install guide says so before you start.
+
+### Stability
+
+- The agent no longer crashes on its way out. On Linux it used to leave a core dump behind every time the service was stopped or restarted.
+- The "rCommander stopped unexpectedly last time" notice now goes away by itself after 30 seconds instead of waiting for you to close it. It is still shown only once; Help ▸ Report a problem… reports it later.
+
+*Coming next.* Two features, which in this house is how a big release starts. **Permissions:** see and change who may read and write a file or folder on any of your computers, as far as rCommander itself is allowed there and not one step further. It will never ask for sudo, and it will never claim a change stuck when it did not. **Disks:** the partitions and USB sticks sitting unmounted will show up in the drive picker. The ones your computer lets you mount will mount with a click, and on Windows you will at least see them. A Windows partition seen from Linux mounts read-only unless Windows really shut down, because we like your files where they are. Only two things, so the next release will be small. You know how this ends.
+
 ## 0.1.7
 
 > **Updated 2026-11-15:** the Windows setup program `rCommander-Setup.exe` was added to this release, and `rCommander-0.1.7.zip` and `SHA256SUMS` were swapped for a rebuild whose only change is the setup script it needs (`setup.ps1`, plus `README-INSTALL.md`); rCommander itself is the same 0.1.7. The setup program is new, so it is worth testing a bit, but it should work fine: put it next to the zip and double-click it.
